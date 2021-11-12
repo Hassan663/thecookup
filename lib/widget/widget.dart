@@ -1,14 +1,15 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/model/follower_list_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 InputDecoration loginPageInputDecoration() {
-  return InputDecoration(
-      // contentPadding: const EdgeInsets.only(
-      //     left: 5, right: 5,bottom: 13),
-      border: InputBorder.none,
-      fillColor: fTextFieldColor,
-      filled: true);
+  return const InputDecoration(
+    border: InputBorder.none,
+    fillColor: fTextFieldColor,
+    filled: true,
+  );
 }
 
 InputDecoration signupPageInputDecoration(String hintText) {
@@ -53,33 +54,94 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 118,
-      height: 32,
-        decoration: BoxDecoration(
-          // image: DecorationImage(image: AssetImage("assets/images/stocks.png")),
-            color: fTextFieldColor,
-            borderRadius:
-            BorderRadius.all(Radius.circular(8.0))),
-      child: FilterChip(
-        avatar: Image.asset("assets/images/stocks.png"),
-        showCheckmark: false,
-        label: Text(widget.chipName),
-        labelStyle: GoogleFonts.robotoSlab(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: 13,
-            color: Colors.black
-        ),
-        selected: _isSelected,
-        backgroundColor: fTextFieldColor,
-        onSelected: (isSelected) {
+    return InkWell(
+        onTap: () {
           setState(() {
-            _isSelected = isSelected;
+            _isSelected = !_isSelected;
           });
         },
-        selectedColor: Colors.blueAccent,
-      ),
+        child: Container(
+          width: 100,
+          height: 34,
+          decoration: BoxDecoration(
+            color: _isSelected ? Colors.blueAccent : fTextFieldColor,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Center(
+            child: Text(
+              widget.chipName,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.robotoSlab(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 13,
+                  color: Colors.black),
+            ),
+          ),
+        ));
+  }
+}
+
+class FilterChipWithImageWidget extends StatefulWidget {
+  final String image;
+
+  // final double width;
+  // final double height;
+
+  const FilterChipWithImageWidget({Key? key, required this.image})
+      : super(key: key);
+
+  @override
+  _FilterChipWithImageWidgetState createState() =>
+      _FilterChipWithImageWidgetState();
+}
+
+class _FilterChipWithImageWidgetState extends State<FilterChipWithImageWidget> {
+  var _isSelected = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _isSelected = !_isSelected;
+        });
+      },
+      child: Container(
+          decoration: BoxDecoration(
+            color: _isSelected ? Colors.blueAccent : fTextFieldColor,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Image.asset(widget.image)),
     );
   }
 }
+
+// class SizeConfig{
+//
+//   double heightSize(BuildContext context, double value){
+//     value /= 100;
+//     return MediaQuery.of(context).size.height * value;
+//   }
+//
+//   double widthSize(BuildContext context,double value ){
+//     value /=100;
+//     return MediaQuery.of(context).size.width * value;
+//   }
+// }
+
+// Widget buildList() => ListView.builder(
+//     itemCount: follower.length,
+//     itemBuilder: (context, index) {
+//       final itemm = follower[index];
+//       return ListTile(
+//         title: Text(itemm),
+//         leading: CircleAvatar(
+//           radius: 75,
+//           backgroundImage: NetworkImage(
+//             'https://source.unsplash.com/random?sig=$index'
+//           ),
+//         ),
+//         // title: Text(item),
+//       );
+//     });

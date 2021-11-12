@@ -1,4 +1,6 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/views/login.dart';
+import 'package:cookup/views/sign_up_code.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,10 +29,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 30, top: 51),
+                  padding: EdgeInsets.only(left: 20, top: 40),
                   child: Align(
                       alignment: Alignment.bottomLeft,
-                      child: Icon(Icons.arrow_back_ios, color: Colors.white)),
+                      child: IconButton(
+                          onPressed: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const LoginScreen()));
+                          },
+                          icon: Icon(Icons.arrow_back_ios, color: Colors.white))),
                 ),
                 SizedBox(
                   height: 60,
@@ -62,7 +71,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                       SizedBox(
                         width: 182.0,
-                        height: 24.0,
+                        height: 28.0,
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           decoration: const InputDecoration(
@@ -81,7 +90,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   width: 127,
                   height: 16,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CodeScreen()));
+                    },
                     child: Text(
                       "Send Code",
                       style: GoogleFonts.roboto(
@@ -149,22 +163,30 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   height: 20,
                 ),
 
-                Container(
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/star.png"))),
-                  height: 59,
-                  width: 67,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CodeScreen()));
+                  },
                   child: Container(
-                    margin: const EdgeInsets.only(top: 20),
-                    child: Text(
-                      "Send\ncode",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.roboto(
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 10,
-                          color: Colors.black),
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/star.png"))),
+                    height: 59,
+                    width: 67,
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      child: Text(
+                        "Send\ncode",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.roboto(
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 10,
+                            color: Colors.black),
+                      ),
                     ),
                   ),
                 ),

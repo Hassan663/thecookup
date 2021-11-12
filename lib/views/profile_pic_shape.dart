@@ -1,5 +1,4 @@
 import 'package:cookup/constants/color_constant.dart';
-import 'package:cookup/shape/star_shape.dart';
 import 'package:cookup/views/photo_icon_chng.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -136,7 +135,9 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                   width: 110,
                   height: 44,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                    },
                     child: Text(
                       "Done",
                       style: GoogleFonts.nunito(

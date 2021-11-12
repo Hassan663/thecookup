@@ -28,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: [
               Padding(
@@ -64,11 +65,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 18,
               ),
               Container(
-                margin: EdgeInsets.only(left: 96,right: 96),
-                height: 1 * 24.0,
+                margin: EdgeInsets.only(left: 96, right: 96),
+                width: 171.0,
+                height: 22.0,
                 child: TextFormField(
-                  maxLines: 1,
-                  maxLengthEnforcement: MaxLengthEnforcement.enforced,
                   keyboardType: TextInputType.emailAddress,
                   decoration: loginPageInputDecoration(),
                 ),

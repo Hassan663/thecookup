@@ -12,4 +12,7 @@ const fContButtonColor = Color(0xFF497133);
 const fInterestBgColor = Color(0xFF497133);
 const fSearchFieldColor = Color(0xFFD9D9CE);
 const fDoneButtonColor = Color(0xFF959563);
+const fFollowButtonColor = Color(0xFFF1F0E4);
+const fFollowButtonBorderColor = Color(0xFF7E97B7);
+const fFollowTextColor = Color(0xFF6D8AB1);
 
