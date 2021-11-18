@@ -15,4 +15,12 @@ const fDoneButtonColor = Color(0xFF959563);
 const fFollowButtonColor = Color(0xFFF1F0E4);
 const fFollowButtonBorderColor = Color(0xFF7E97B7);
 const fFollowTextColor = Color(0xFF6D8AB1);
+const fHintTextColor = Color(0xFF968C8C);
+const fCreateColor = Color(0xFF056AC7);
+const fFeedRoomBgColor = Color(0xFF629C5D);
+const fSwitchActiveColor = Color(0xFF24FF00);
+const fPollBtnColor = Color(0xFF002F67);
+const fTabsColor = Color(0xFF3DA554);
+const fFollowingButtonColor = Color(0xFF5577A7);
+const fFollowingButtonBorderColor = Color(0xFF9EB0C4);
 

@@ -6,9 +6,22 @@ import 'package:google_fonts/google_fonts.dart';
 
 InputDecoration loginPageInputDecoration() {
   return const InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 11),
     border: InputBorder.none,
     fillColor: fTextFieldColor,
     filled: true,
+  );
+}
+
+Text robotoFontText(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(
+        fontSize: 24,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        color: Colors.white),
+    textAlign: TextAlign.center,
   );
 }
 
@@ -117,6 +130,25 @@ class _FilterChipWithImageWidgetState extends State<FilterChipWithImageWidget> {
   }
 }
 
+
+
+// class ColoredSafeArea extends StatelessWidget {
+//   final Widget child;
+//   final Color color;
+//   const ColoredSafeArea({Key? key, required this.child,required this.color}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     return Container(
+//       color: color ?? Theme.of(context).colorScheme.primaryVariant,
+//       child: SafeArea(
+//         child: child,
+//       ),
+//     );
+//   }
+// }
+
 // class SizeConfig{
 //
 //   double heightSize(BuildContext context, double value){
@@ -145,3 +177,5 @@ class _FilterChipWithImageWidgetState extends State<FilterChipWithImageWidget> {
 //         // title: Text(item),
 //       );
 //     });
+
+

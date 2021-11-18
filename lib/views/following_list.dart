@@ -1,24 +1,18 @@
-import 'dart:ui';
-
 import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/model/follower_list_model.dart';
-import 'package:cookup/widget/widget.dart';
+import 'package:cookup/model/following_list_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FollowersList extends StatefulWidget {
-  const FollowersList({Key? key}) : super(key: key);
+class FollowingList extends StatefulWidget {
+  const FollowingList({Key? key}) : super(key: key);
 
   @override
-  _FollowersListState createState() => _FollowersListState();
+  _FollowingListState createState() => _FollowingListState();
 }
 
-class _FollowersListState extends State<FollowersList> {
-  bool pressAttention = false;
-
-  // bool cmbscritta = false;
-
+class _FollowingListState extends State<FollowingList> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -70,7 +64,7 @@ class _FollowersListState extends State<FollowersList> {
                     child: ListView.builder(
                         itemCount: follower.length,
                         itemBuilder: (context, index) {
-                          FollowersModel followersModel = follower[index];
+                          FollowingModel followingModel = following[index];
                           return ListTile(
                               leading: Container(
                                 width: 60.0,
@@ -79,7 +73,7 @@ class _FollowersListState extends State<FollowersList> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage(followersModel.image),
+                                        image: AssetImage(followingModel.image),
                                         fit: BoxFit.fill),
                                     color: fTextFieldColor,
                                     borderRadius:
@@ -90,7 +84,7 @@ class _FollowersListState extends State<FollowersList> {
                               title: Padding(
                                 padding: const EdgeInsets.only(top: 25.0),
                                 child: Text(
-                                  followersModel.name,
+                                  followingModel.name,
                                   style: GoogleFonts.rosarivo(
                                       fontStyle: FontStyle.normal,
                                       fontWeight: FontWeight.w400,
@@ -98,43 +92,15 @@ class _FollowersListState extends State<FollowersList> {
                                       color: Colors.white),
                                 ),
                               ),
-                              subtitle: Text(followersModel.desc,
-                                  style: GoogleFonts.roboto(
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 12,
-                                      color: Colors.white)),
-                              trailing: ElevatedButton(
-                                onPressed: () {
-                                  setState(() {
-                                    pressAttention = !pressAttention;
-                                  });
-                                },
-                                child: Text(
-                                  followersModel.followButton,
-                                  style: GoogleFonts.rosarivo(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    color: pressAttention
-                                        ? Colors.grey
-                                        : Colors.blue,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            fFollowButtonColor),
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        const RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(22.0)),
-                                            side: BorderSide(
-                                                color: fFollowButtonBorderColor,
-                                                width: 1.0)))),
-                              ));
+                              // subtitle: Text(followingModel.desc,
+                              //     style: GoogleFonts.roboto(
+                              //         fontStyle: FontStyle.normal,
+                              //         fontWeight: FontWeight.w700,
+                              //         fontSize: 12,
+                              //         color: Colors.white)),
+                              trailing: IconButton(
+                                  onPressed: () {},
+                                  icon: Image.asset(followingModel.icon)));
                         }),
                   ),
                 ],
