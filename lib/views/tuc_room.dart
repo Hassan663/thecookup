@@ -1,6 +1,7 @@
 import 'package:cookup/constants/app_routes.dart';
 import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/model/message_model.dart';
+import 'package:cookup/views/feed.dart';
 import 'package:cookup/views/sign_up_code.dart';
 import 'package:cookup/widget/app_icons.dart';
 import 'package:cookup/widget/appp_text_widget.dart';
@@ -131,18 +132,10 @@ class _TucRoomState extends State<TucRoom> {
                                                 height: 10,
                                               ),
                                               InkWell(
-                                                onTap: () {
-                                                  setState(() {
-                                                    isSelected = !isSelected;
-                                                    print(isSelected);
-                                                    print("object");
-                                                  });
-                                                },
+                                                onTap: () {},
                                                 child: MyText(
                                                   "Mini Screen",
-                                                  color: isSelected
-                                                      ? Colors.black
-                                                      : Colors.green,
+                                                  color: Colors.green,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -158,17 +151,12 @@ class _TucRoomState extends State<TucRoom> {
                                               ),
                                               InkWell(
                                                 onTap: () {
-                                                  setState(() {
-                                                    isSelected1 = !isSelected1;
-                                                    print(isSelected1);
-                                                    print("object1");
-                                                  });
+                                                  AppRoutes.push(
+                                                      context, Feed());
                                                 },
                                                 child: MyText(
                                                   "Full Screen",
-                                                  color: isSelected1
-                                                      ? Colors.green
-                                                      : Colors.black,
+                                                  color: Colors.black,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -183,18 +171,10 @@ class _TucRoomState extends State<TucRoom> {
                                                 ),
                                               ),
                                               InkWell(
-                                                onTap: () {
-                                                  setState(() {
-                                                    isSelected2 = !isSelected2;
-                                                    print(isSelected2);
-                                                    print("object2");
-                                                  });
-                                                },
+                                                onTap: () {},
                                                 child: MyText(
                                                   "Hide",
-                                                  color: isSelected2
-                                                      ? Colors.green
-                                                      : Colors.black,
+                                                  color: Colors.black,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w600,
                                                 ),

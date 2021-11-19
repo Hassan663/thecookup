@@ -1,5 +1,7 @@
+import 'package:cookup/constants/app_routes.dart';
 import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/views/sign_up_code.dart';
+import 'package:cookup/views/tuc_room.dart';
 import 'package:cookup/widget/app_icons.dart';
 import 'package:cookup/widget/appp_text_widget.dart';
 import 'package:cookup/widget/bottom_bar.dart';
@@ -100,17 +102,11 @@ class _FeedState extends State<Feed> {
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          setState(() {
-                                            isSelected = !isSelected;
-                                            print(isSelected);
-                                            print("object");
-                                          });
+                                          AppRoutes.push(context, TucRoom());
                                         },
                                         child: MyText(
                                           "Mini Screen",
-                                          color: isSelected
-                                              ? Colors.black
-                                              : Colors.green,
+                                          color: Colors.black,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -124,18 +120,10 @@ class _FeedState extends State<Feed> {
                                         ),
                                       ),
                                       InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            isSelected1 = !isSelected1;
-                                            print(isSelected1);
-                                            print("object1");
-                                          });
-                                        },
+                                        onTap: () {},
                                         child: MyText(
                                           "Full Screen",
-                                          color: isSelected1
-                                              ? Colors.green
-                                              : Colors.black,
+                                          color: Colors.green,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -149,18 +137,10 @@ class _FeedState extends State<Feed> {
                                         ),
                                       ),
                                       InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            isSelected4 = !isSelected4;
-                                            print(isSelected4);
-                                            print("object");
-                                          });
-                                        },
+                                        onTap: () {},
                                         child: MyText(
                                           "Go to chat",
-                                          color: isSelected4
-                                              ? Colors.black
-                                              : Colors.green,
+                                          color: Colors.black,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -174,18 +154,10 @@ class _FeedState extends State<Feed> {
                                         ),
                                       ),
                                       InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            isSelected2 = !isSelected2;
-                                            print(isSelected2);
-                                            print("object2");
-                                          });
-                                        },
+                                        onTap: () {},
                                         child: MyText(
                                           "Hide",
-                                          color: isSelected2
-                                              ? Colors.green
-                                              : Colors.black,
+                                          color: Colors.black,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),

@@ -1,4 +1,3 @@
-import 'package:cookup/views/feed.dart';
 import 'package:cookup/views/instant_message.dart';
 import 'package:cookup/views/tuc_room.dart';
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Feed(),
+      home: const TucRoom(),
     );
   }
 }
