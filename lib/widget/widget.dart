@@ -1,9 +1,9 @@
 import 'package:cookup/constants/color_constant.dart';
-import 'package:cookup/model/follower_list_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//EditText
 InputDecoration loginPageInputDecoration() {
   return const InputDecoration(
     contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 11),
@@ -13,7 +13,17 @@ InputDecoration loginPageInputDecoration() {
   );
 }
 
-Text robotoFontText(String text) {
+//bgImage
+BoxDecoration backgroundImage(String image) {
+  return BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage(image),
+        fit: BoxFit.fill,
+      ));
+}
+
+// textStyle
+Text robotoFont24Text(String text) {
   return Text(
     text,
     style: GoogleFonts.roboto(
@@ -22,6 +32,87 @@ Text robotoFontText(String text) {
         fontWeight: FontWeight.w700,
         color: Colors.white),
     textAlign: TextAlign.center,
+  );
+}
+
+// textStyle
+Text robotoFont18Text(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        fontSize: 18,
+        color: Colors.white),
+    textAlign: TextAlign.center,
+  );
+}
+// textStyle
+Text robotoFont11Text(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        fontSize: 11,
+        color: Colors.white),
+    textAlign: TextAlign.center,
+  );
+}
+
+Text robotoFont14Text(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        fontSize: 14,
+        color: Colors.black),
+    textAlign: TextAlign.center,
+  );
+}
+
+Text registerText(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        fontSize: 14,
+        color: fTextColor),
+
+  );
+}
+
+ElevatedButton rectangleShapeButton(String text) {
+  return ElevatedButton(
+    onPressed: () {
+      // showModalBottomSheet(
+      //     isScrollControlled: true,
+      //     backgroundColor: Colors.transparent,
+      //     context: context,
+      //     builder: (context) {
+      //       return const OpenRoom();
+      //     });
+    },
+    child: robotoFont18Text(text),
+    // child: Text(
+    //   text,
+    //   style: GoogleFonts.roboto(
+    //       fontStyle: FontStyle.normal,
+    //       fontWeight: FontWeight.w700,
+    //       fontSize: 18,
+    //       color: Colors.white),
+    //   textAlign: TextAlign.center,
+    // ),
+    style: ButtonStyle(
+        backgroundColor:
+        MaterialStateProperty.all<Color>(fButtonLoginColor),
+        shape:
+        MaterialStateProperty.all<RoundedRectangleBorder>(
+            const RoundedRectangleBorder(
+                borderRadius: BorderRadius.zero,
+                side: BorderSide(color: Colors.black)))),
   );
 }
 
@@ -46,7 +137,7 @@ InputDecoration signupPageInputDecoration(String hintText) {
 }
 
 InputDecoration enterCodeInputDecoration() {
-  return InputDecoration(
+  return const InputDecoration(
     border: InputBorder.none,
     fillColor: fCodeSentColor,
     filled: true,
@@ -130,8 +221,6 @@ class _FilterChipWithImageWidgetState extends State<FilterChipWithImageWidget> {
   }
 }
 
-
-
 // class ColoredSafeArea extends StatelessWidget {
 //   final Widget child;
 //   final Color color;
@@ -177,5 +266,3 @@ class _FilterChipWithImageWidgetState extends State<FilterChipWithImageWidget> {
 //         // title: Text(item),
 //       );
 //     });
-
-
