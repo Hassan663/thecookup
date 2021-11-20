@@ -1,4 +1,5 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/views/open_room.dart';
 import 'package:cookup/views/signup.dart';
 import 'package:cookup/widget/widget.dart';
 import 'package:flutter/material.dart';
@@ -18,17 +19,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/bg.png"), fit: BoxFit.cover,
-          )),
+        image: AssetImage("assets/images/bg.png"),
+        fit: BoxFit.cover,
+      )),
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 Padding(
@@ -37,20 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 30.0, top: 20.0, right: 30.0),
+                      const EdgeInsets.only(left: 30.0, top: 20.0, right: 30.0),
                   child: robotoFontText(
                       "Thank You For Joining The Cook Up where we bring discussion "
-                          "to a new level enjoy the app and share with friends"),
-                  // child: Text(
-                  //   "Thank You For Joining The Cook Up where we bring discussion "
-                  //   "to a new level enjoy the app and share with friends",
-                  //   style: GoogleFonts.roboto(
-                  //       fontSize: 24,
-                  //       fontStyle: FontStyle.normal,
-                  //       fontWeight: FontWeight.w700,
-                  //       color: Colors.white),
-                  //   textAlign: TextAlign.center,
-                  // ),
+                      "to a new level enjoy the app and share with friends"),
                 ),
                 const SizedBox(
                   height: 18.0,
@@ -68,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 18,
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 96, right: 96),
+                  margin: const EdgeInsets.only(left: 96, right: 96),
                   width: 171.0,
                   height: 30.0,
                   child: TextFormField(
@@ -107,7 +99,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: 91,
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          context: context,
+                          builder: (context) {
+                            return const OpenRoom();
+                          });
+                    },
                     child: Text(
                       "Login",
                       style: GoogleFonts.roboto(
@@ -119,11 +119,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     style: ButtonStyle(
                         backgroundColor:
-                        MaterialStateProperty.all<Color>(fButtonLoginColor),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.zero,
-                                side: BorderSide(color: Colors.black)))),
+                            MaterialStateProperty.all<Color>(fButtonLoginColor),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero,
+                                    side: BorderSide(color: Colors.black)))),
                   ),
                 ),
                 const SizedBox(
@@ -134,7 +135,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ForgotPasswordScreen()));
+                            builder: (context) =>
+                                const ForgotPasswordScreen()));
                   },
                   child: Container(
                     decoration: const BoxDecoration(
@@ -203,6 +205,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-
-

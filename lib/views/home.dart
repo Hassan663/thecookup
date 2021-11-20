@@ -1,6 +1,4 @@
 import 'package:cookup/constants/color_constant.dart';
-import 'package:cookup/model/home_list_model.dart';
-import 'package:cookup/widget/item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Padding(
@@ -76,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     borderRadius: BorderRadius.circular(8),
                                     color: fTabsColor,
                                     border: Border.all(color: Colors.black)),
-                                child: Tab(
+                                child: const Tab(
                                   child: Text(
                                     "Open Rooms",
                                     textAlign: TextAlign.center,
@@ -90,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     borderRadius: BorderRadius.circular(8),
                                     color: fTabsColor,
                                     border: Border.all(color: Colors.black)),
-                                child: Tab(
+                                child: const Tab(
                                   child: Text(
                                     "Paid Rooms",
                                     textAlign: TextAlign.center,
@@ -104,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     borderRadius: BorderRadius.circular(8),
                                     color: fTabsColor,
                                     border: Border.all(color: Colors.black)),
-                                child: Tab(
+                                child: const Tab(
                                   child: Text(
                                     "All Rooms",
                                     textAlign: TextAlign.center,
@@ -121,12 +119,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 10,
                         color: Colors.white),
                   ),
-                  ListView.builder(
-                    itemCount: CatalogModel.items.length,
-                      itemBuilder: (context,index){
-                      return ItemWidget(item: CatalogModel.items[index],);
-                      }
-                  )
+                  // ListView.builder(
+                  //   itemCount: CatalogModel.items.length,
+                  //     itemBuilder: (context,index){
+                  //     return ItemWidget(item: CatalogModel.items[index],);
+                  //     }
+                  // )
                   // DefaultTabController(length: length, child: child)
                 ],
               ),

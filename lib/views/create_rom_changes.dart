@@ -1,8 +1,8 @@
-import 'package:cookup/constants/color_constant.dart';
-import 'package:cookup/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'create_group.dart';
 
 class RomChanges extends StatefulWidget {
   const RomChanges({Key? key}) : super(key: key);
@@ -14,10 +14,10 @@ class RomChanges extends StatefulWidget {
 class _RomChangesState extends State<RomChanges> {
   @override
   Widget build(BuildContext context) {
-    int? _value = 1;
+    int? _value1 = 0;
 
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -30,20 +30,20 @@ class _RomChangesState extends State<RomChanges> {
             body: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 15, top: 5),
+                  padding: const EdgeInsets.only(left: 15, top: 5),
                   child: Align(
                       alignment: Alignment.bottomLeft,
                       child: IconButton(
                           onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => const LoginScreen()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const CreateGroup()));
                           },
-                          icon:
-                              Icon(Icons.arrow_back_ios, color: Colors.white))),
+                          icon: const Icon(Icons.arrow_back_ios,
+                              color: Colors.white))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Padding(
@@ -95,39 +95,33 @@ class _RomChangesState extends State<RomChanges> {
                             fontSize: 16,
                             color: Colors.white),
                       ),
-
                       Radio(
-                          value: 1,
-                          groupValue: _value,
-                          activeColor: Colors.black,
+                          value: 0,
+                          groupValue: _value1,
                           onChanged: (value) {
                             setState(() {
-                              _value = value as int?;
+                              _value1 = value as int?;
                             });
                           }),
                       Radio(
                           value: 2,
-                          groupValue: _value,
-                          activeColor: Colors.black,
+                          groupValue: _value1,
                           onChanged: (value) {
                             setState(() {
-                              _value = value as int?;
+                              _value1 = value as int?;
                             });
                           }),
                       Radio(
                           value: 3,
-                          groupValue: _value,
-                          activeColor: Colors.black,
+                          groupValue: _value1,
                           onChanged: (value) {
                             setState(() {
-                              _value = value as int?;
+                              _value1 = value as int?;
                             });
                           }),
                     ],
                   ),
                 ),
-
-                
               ],
             ),
           ),

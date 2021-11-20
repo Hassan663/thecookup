@@ -32,11 +32,11 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
         child: Scaffold(
       backgroundColor: fFeedRoomBgColor,
       body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 5, top: 10),
+                padding: const EdgeInsets.only(left: 5, top: 10),
                 child: Align(
                     alignment: Alignment.bottomLeft,
                     child: IconButton(
@@ -46,9 +46,10 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                           //     MaterialPageRoute(
                           //         builder: (context) => const CodeScreen()));
                         },
-                        icon: Icon(Icons.arrow_back_ios, color: Colors.white))),
+                        icon: const Icon(Icons.arrow_back_ios,
+                            color: Colors.white))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -102,7 +103,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -142,7 +143,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               Padding(
@@ -196,7 +197,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -242,7 +243,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                       })
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
@@ -296,7 +297,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -342,7 +343,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                       })
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -375,7 +376,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                         fontSize: 10,
                         color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 35,
                   ),
                   Text(
@@ -516,7 +517,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                           fontSize: 12,
                           color: Colors.black),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     SizedBox(
@@ -530,7 +531,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -548,7 +549,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                               fontSize: 12,
                               color: Colors.black),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                       ],
@@ -593,7 +594,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -610,7 +611,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                           color: Colors.black),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Row(
@@ -624,7 +625,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                             fontSize: 12,
                             color: Colors.black),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       SizedBox(
@@ -639,13 +640,13 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 65,
                   ),
                   Text(
@@ -657,7 +658,7 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                         fontSize: 12,
                         color: Colors.black),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   SizedBox(
@@ -696,7 +697,6 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                       ))),
                 ),
               ),
-
               Row(
                 children: [
                   Padding(
@@ -711,11 +711,10 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                           color: Colors.black),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 70,
                     width: 5,
                   ),
-
                   SizedBox(
                     width: 117.0,
                     height: 30.0,
@@ -746,21 +745,22 @@ class _FeedRoomSettingOptionState extends State<FeedRoomSettingOption> {
                       ),
                       style: ButtonStyle(
                           backgroundColor:
-                          MaterialStateProperty.all<Color>(fPollBtnColor),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              ))),
+                              MaterialStateProperty.all<Color>(fPollBtnColor),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.0)),
+                          ))),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
             ],
-          )
-      ),
+          )),
     ));
   }
 }

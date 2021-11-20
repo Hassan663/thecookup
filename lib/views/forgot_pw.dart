@@ -27,11 +27,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 15,top: 5),
+                    padding: const EdgeInsets.only(left: 15, top: 5),
                     child: Align(
                         alignment: Alignment.bottomLeft,
                         child: IconButton(
@@ -39,12 +39,13 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const LoginScreen()));
+                                      builder: (context) =>
+                                          const LoginScreen()));
                             },
-                            icon:
-                                Icon(Icons.arrow_back_ios, color: Colors.white))),
+                            icon: const Icon(Icons.arrow_back_ios,
+                                color: Colors.white))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 60,
                   ),
                   Text(
@@ -69,7 +70,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               fontSize: 14,
                               color: Colors.white),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
                         SizedBox(
@@ -83,7 +84,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
                   SizedBox(
@@ -117,7 +118,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                           color: Colors.white, width: 1.0)))),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
                   Text(
@@ -142,7 +143,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               fontSize: 14,
                               color: Colors.white),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
                         SizedBox(
@@ -156,7 +157,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   GestureDetector(
@@ -186,7 +187,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                 ],

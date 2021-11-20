@@ -23,4 +23,10 @@ const fPollBtnColor = Color(0xFF002F67);
 const fTabsColor = Color(0xFF3DA554);
 const fFollowingButtonColor = Color(0xFF5577A7);
 const fFollowingButtonBorderColor = Color(0xFF9EB0C4);
+const fBottomSheetColor = Color(0xFF191F28);
+const fSheetLineColor = Color(0xFF161515);
+const fSheetBorderLineColor = Color(0xFF464242);
+const fRoomTitleBoxColor = Color(0xFF25848B);
+const fRoomAccessibilityColor = Color(0xFF0B5358);
+
 

@@ -1,10 +1,11 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/views/grouped_profile.dart';
 import 'package:cookup/views/photo_icon_chng.dart';
-import 'package:cookup/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'create_rom_changes.dart';
 import 'feed_room_setting_option.dart';
 
 class CreateGroup extends StatefulWidget {
@@ -18,7 +19,7 @@ class _CreateGroupState extends State<CreateGroup> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -29,7 +30,7 @@ class _CreateGroupState extends State<CreateGroup> {
             child: Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 Padding(
@@ -37,19 +38,21 @@ class _CreateGroupState extends State<CreateGroup> {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                         Navigator.pop(context);
+                        },
                         icon: Image.asset("assets/images/cross.png")),
                   ),
                 ),
                 Container(
                   width: 120,
                   height: 100,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: fTextFieldColor,
                       image: DecorationImage(
                           image: AssetImage("assets/images/addimage.png"))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 11,
                 ),
                 Text(
@@ -60,7 +63,7 @@ class _CreateGroupState extends State<CreateGroup> {
                       fontSize: 24,
                       color: Colors.white),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 3,
                 ),
                 SizedBox(
@@ -94,7 +97,7 @@ class _CreateGroupState extends State<CreateGroup> {
                                         color: Colors.white, width: 1.0)))),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 Container(
@@ -108,7 +111,8 @@ class _CreateGroupState extends State<CreateGroup> {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Group Name",
-                      contentPadding: EdgeInsets.only(left: 30.0, bottom: 5),
+                      contentPadding:
+                          const EdgeInsets.only(left: 30.0, bottom: 5),
                       hintStyle: GoogleFonts.roboto(
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w700,
@@ -118,13 +122,13 @@ class _CreateGroupState extends State<CreateGroup> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Container(
                   width: 330.0,
                   height: 130.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(8),
                           topRight: Radius.circular(8)),
@@ -134,7 +138,8 @@ class _CreateGroupState extends State<CreateGroup> {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "About....",
-                      contentPadding: EdgeInsets.only(left: 30.0, top: 20),
+                      contentPadding:
+                          const EdgeInsets.only(left: 30.0, top: 20),
                       hintStyle: GoogleFonts.roboto(
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w700,
@@ -144,7 +149,7 @@ class _CreateGroupState extends State<CreateGroup> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -156,125 +161,161 @@ class _CreateGroupState extends State<CreateGroup> {
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 8.0, right: 8.0, top: 8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Membership",
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18,
-                                    color: Colors.black),
-                              ),
-                              Text(
-                                "Open to Public",
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 12,
-                                    color: Colors.black),
-                              ),
-                            ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RomChanges()));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Membership",
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 18,
+                                      color: Colors.black),
+                                ),
+                                Text(
+                                  "Open to Public",
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.black,
                           thickness: 1.0,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 8.0, right: 8.0, top: 8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Positions/Rolls",
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18,
-                                    color: Colors.black),
-                              ),
-                              Text(
-                                "Co-Owner ,Presidents, \nChat Mod ,Feed Mod",
-                                maxLines: 2,
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 12,
-                                    color: Colors.black),
-                              ),
-                            ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RomChanges()));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Positions/Rolls",
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 18,
+                                      color: Colors.black),
+                                ),
+                                Text(
+                                  "Co-Owner ,Presidents, \nChat Mod ,Feed Mod",
+                                  maxLines: 2,
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.black,
                           thickness: 1.0,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 8.0, right: 8.0, top: 8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Interest Topic",
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18,
-                                    color: Colors.black),
-                              ),
-                              Text(
-                                "Relax , Open , \nBusiness , A.i.",
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 12,
-                                    color: Colors.black),
-                              ),
-                            ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RomChanges()));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Interest Topic",
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 18,
+                                      color: Colors.black),
+                                ),
+                                Text(
+                                  "Relax , Open , \nBusiness , A.i.",
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.black,
                           thickness: 1.0,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 8.0, right: 8.0, top: 8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Subscription",
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18,
-                                    color: Colors.black),
-                              ),
-                              Text(
-                                "No Charge",
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 12,
-                                    color: Colors.black),
-                              ),
-                            ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RomChanges()));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Subscription",
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 18,
+                                      color: Colors.black),
+                                ),
+                                Text(
+                                  "No Charge",
+                                  style: GoogleFonts.roboto(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Container(
                   width: 330.0,
                   height: 130.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20)),
@@ -285,7 +326,7 @@ class _CreateGroupState extends State<CreateGroup> {
                       border: InputBorder.none,
                       hintText: "Room Rules you want your Acolytes to follow",
                       contentPadding:
-                          EdgeInsets.only(left: 25.0, top: 15, right: 20),
+                          const EdgeInsets.only(left: 25.0, top: 15, right: 20),
                       hintStyle: GoogleFonts.roboto(
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w700,
@@ -295,15 +336,15 @@ class _CreateGroupState extends State<CreateGroup> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const CodeScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GroupedProfile()));
                   },
                   child: ClipOval(
                       child: Container(
@@ -313,7 +354,7 @@ class _CreateGroupState extends State<CreateGroup> {
                       color: fCreateColor,
                       border: Border.all(color: Colors.black, width: 2.0),
                       borderRadius:
-                          new BorderRadius.all(Radius.elliptical(81, 45)),
+                          const BorderRadius.all(Radius.elliptical(81, 45)),
                     ),
                     child: Center(
                       child: Text(
@@ -328,7 +369,7 @@ class _CreateGroupState extends State<CreateGroup> {
                     ),
                   )),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 27,
                 ),
               ],

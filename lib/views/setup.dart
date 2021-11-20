@@ -260,7 +260,7 @@ class _SetupScreenState extends State<SetupScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const ProfilePicShapeScreen()));
+                                  const InterestScreen()));
                     },
                     child: Container(
                       decoration: const BoxDecoration(

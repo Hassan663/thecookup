@@ -1,6 +1,7 @@
 import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/model/follower_list_model.dart';
-import 'package:cookup/model/following_list_model.dart';
+import 'package:cookup/views/grouped_profile.dart';
+import 'package:cookup/views/tcu_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,26 +30,25 @@ class _FollowingListState extends State<FollowingList> {
                 physics: const BouncingScrollPhysics(),
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 15, top: 5),
+                    padding: const EdgeInsets.only(left: 15, top: 5),
                     child: Align(
                         alignment: Alignment.bottomLeft,
                         child: IconButton(
                             onPressed: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) =>
-                              //             const CodeScreen()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const MyProfile()));
                             },
-                            icon: Icon(Icons.arrow_back_ios,
+                            icon: const Icon(Icons.arrow_back_ios,
                                 color: Colors.white))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Center(
                     child: Text(
-                      "Follwers",
+                      "Following",
                       style: GoogleFonts.robotoSlab(
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w700,
@@ -56,51 +56,83 @@ class _FollowingListState extends State<FollowingList> {
                           color: Colors.white),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
-                  Container(
+                  SizedBox(
                     height: MediaQuery.of(context).size.height,
                     child: ListView.builder(
                         itemCount: follower.length,
                         itemBuilder: (context, index) {
-                          FollowingModel followingModel = following[index];
+                          FollowersModel followersModel = follower[index];
                           return ListTile(
-                              leading: Container(
-                                width: 60.0,
-                                height: 120.0,
-                                color: Colors.transparent,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(followingModel.image),
-                                        fit: BoxFit.fill),
-                                    color: fTextFieldColor,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(30.0)),
-                                  ),
+                            leading: Container(
+                              width: 60.0,
+                              height: 120.0,
+                              color: Colors.transparent,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(followersModel.image),
+                                      fit: BoxFit.fill),
+                                  color: fTextFieldColor,
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(30.0)),
                                 ),
                               ),
-                              title: Padding(
-                                padding: const EdgeInsets.only(top: 25.0),
-                                child: Text(
-                                  followingModel.name,
-                                  style: GoogleFonts.rosarivo(
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      color: Colors.white),
-                                ),
+                            ),
+                            title: Padding(
+                              padding: const EdgeInsets.only(top: 25.0),
+                              child: Text(
+                                followersModel.name,
+                                style: GoogleFonts.rosarivo(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: Colors.white),
                               ),
-                              // subtitle: Text(followingModel.desc,
-                              //     style: GoogleFonts.roboto(
-                              //         fontStyle: FontStyle.normal,
-                              //         fontWeight: FontWeight.w700,
-                              //         fontSize: 12,
-                              //         color: Colors.white)),
-                              trailing: IconButton(
-                                  onPressed: () {},
-                                  icon: Image.asset(followingModel.icon)));
+                            ),
+                            subtitle: Text(followersModel.desc,
+                                style: GoogleFonts.roboto(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12,
+                                    color: Colors.white)),
+                            trailing: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  // pressAttention = !pressAttention;
+                                });
+                              },
+                              child: Text(
+                                followersModel.followButton,
+                                style: GoogleFonts.rosarivo(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: fTextFieldColor),
+                                textAlign: TextAlign.center,
+                              ),
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          fFollowButtonColor),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(22.0)),
+                                          side: BorderSide(
+                                              color: fFollowButtonBorderColor,
+                                              width: 1.0)))),
+                            ),
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const GroupedProfile();
+                              }));
+                            },
+                          );
                         }),
                   ),
                 ],

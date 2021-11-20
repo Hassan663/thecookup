@@ -151,11 +151,11 @@ class _SettingScreenState extends State<SettingScreen> {
                         padding: const EdgeInsets.only(left: 18.0, right: 18.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const InterestScreen()));
+                            // Navigator.push(
+                                // context,
+                                // MaterialPageRoute(
+                                //     builder: (context) =>
+                                //         const InterestScreen()));
                           },
                           child: Align(
                             alignment: Alignment.centerLeft,

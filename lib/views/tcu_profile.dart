@@ -1,6 +1,9 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/model/video_list_model.dart';
+import 'package:cookup/views/following_list.dart';
 import 'package:cookup/views/profile_pic_shape.dart';
 import 'package:cookup/views/settings.dart';
+import 'package:cookup/views/video_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +21,7 @@ class _MyProfileState extends State<MyProfile> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -28,7 +31,7 @@ class _MyProfileState extends State<MyProfile> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Padding(
@@ -46,10 +49,11 @@ class _MyProfileState extends State<MyProfile> {
                                       builder: (context) =>
                                           const ProfilePicShapeScreen()));
                             },
-                            icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                            icon: const Icon(Icons.arrow_back_ios,
+                                color: Colors.white),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         IconButton(
                             onPressed: () {},
                             icon: Image.asset("assets/images/connect.png")),
@@ -58,15 +62,16 @@ class _MyProfileState extends State<MyProfile> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const SettingScreen()));
+                                    builder: (context) =>
+                                        const SettingScreen()));
                           },
-                          icon: Icon(Icons.settings, color: Colors.black),
+                          icon: const Icon(Icons.settings, color: Colors.black),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 55,
+                  const SizedBox(
+                    height: 40,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +81,7 @@ class _MyProfileState extends State<MyProfile> {
                         width: 90.0,
                         color: Colors.transparent,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               image: DecorationImage(
                                   image:
                                       AssetImage("assets/images/charlespf.png"),
@@ -86,7 +91,7 @@ class _MyProfileState extends State<MyProfile> {
                                   BorderRadius.all(Radius.circular(30.0))),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Container(
@@ -94,7 +99,7 @@ class _MyProfileState extends State<MyProfile> {
                         width: 90.0,
                         color: Colors.transparent,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               image: DecorationImage(
                                   image:
                                       AssetImage("assets/images/charlespf.png"),
@@ -104,7 +109,7 @@ class _MyProfileState extends State<MyProfile> {
                                   BorderRadius.all(Radius.circular(30.0))),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Container(
@@ -112,7 +117,7 @@ class _MyProfileState extends State<MyProfile> {
                         width: 90.0,
                         color: Colors.transparent,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               image: DecorationImage(
                                   image:
                                       AssetImage("assets/images/charlespf.png"),
@@ -124,7 +129,7 @@ class _MyProfileState extends State<MyProfile> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 35,
                   ),
                   Padding(
@@ -153,7 +158,7 @@ class _MyProfileState extends State<MyProfile> {
                           textAlign: TextAlign.center),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 13,
                   ),
                   Row(
@@ -165,7 +170,8 @@ class _MyProfileState extends State<MyProfile> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const FollowersList()));
+                                    builder: (context) =>
+                                        const FollowersList()));
                           },
                           child: SizedBox(
                             width: 106,
@@ -183,7 +189,13 @@ class _MyProfileState extends State<MyProfile> {
                       ),
                       Material(
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const FollowingList()));
+                          },
                           child: SizedBox(
                             width: 98,
                             height: 21,
@@ -200,7 +212,7 @@ class _MyProfileState extends State<MyProfile> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 18,
                   ),
                   Padding(
@@ -216,7 +228,7 @@ class _MyProfileState extends State<MyProfile> {
                           textAlign: TextAlign.center),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Row(
@@ -225,6 +237,7 @@ class _MyProfileState extends State<MyProfile> {
                       Row(
                         children: [
                           Image.asset("assets/images/twitter.png"),
+                          // FaIcon(FontAwesomeIcons.twitter,color: Colors.blue,),
                           Text("Add twitter",
                               style: GoogleFonts.rosarivo(
                                   fontStyle: FontStyle.normal,
@@ -248,7 +261,7 @@ class _MyProfileState extends State<MyProfile> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -289,7 +302,7 @@ class _MyProfileState extends State<MyProfile> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -305,7 +318,7 @@ class _MyProfileState extends State<MyProfile> {
                           textAlign: TextAlign.center),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Padding(
@@ -322,9 +335,112 @@ class _MyProfileState extends State<MyProfile> {
                     ),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [],
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 5.0),
+                        height: 40.0,
+                        width: 40.0,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/charlespf.png'),
+                            fit: BoxFit.cover,
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 5.0),
+                        height: 40.0,
+                        width: 40.0,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/charlespf.png'),
+                            fit: BoxFit.cover,
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 5.0),
+                        height: 40.0,
+                        width: 40.0,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/charlespf.png'),
+                            fit: BoxFit.cover,
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ],
                   ),
+                  DefaultTabController(
+                      length: 2, // length of tabs
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: <Widget>[
+                            Container(
+                              height: 40,
+                              color: Colors.white,
+                              width: MediaQuery.of(context).size.width,
+                              child: TabBar(
+                                indicatorPadding:
+                                    const EdgeInsets.only(left: 70, right: 70),
+                                indicatorColor: Colors.black,
+                                tabs: [
+                                  Tab(
+                                    icon:
+                                        Image.asset("assets/images/video.png"),
+                                  ),
+                                  Tab(
+                                    icon: Image.asset(
+                                        "assets/images/podcasticon.png"),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                                height: 300,
+                                child: TabBarView(
+                                    children:[
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height,
+                                      child: GridView.builder(
+                                        physics: const BouncingScrollPhysics(),
+                                        gridDelegate:
+                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                                crossAxisCount: 3,
+                                                mainAxisSpacing: 3,
+                                                crossAxisSpacing: 5),
+                                        itemCount: video.length,
+                                        itemBuilder: (context, index) {
+                                          VideoModel videoModel = video[index];
+                                          return GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            VideoScreen(
+                                                                videoUrl: videoModel
+                                                                    .videoUrl)));
+                                              },
+                                              child: Image.network(
+                                                  videoModel.thumb_url));
+                                        },
+                                      )),
+                                  const Center(
+                                    child: Text('Display Tab 2',
+                                        style: TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                ]))
+                          ])),
                 ],
               ),
             ),

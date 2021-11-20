@@ -1,4 +1,9 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/model/follower_list_model.dart';
+import 'package:cookup/model/video_list_model.dart';
+import 'package:cookup/views/create_group.dart';
+import 'package:cookup/views/following_list.dart';
+import 'package:cookup/views/video_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +21,7 @@ class _GroupedProfileState extends State<GroupedProfile> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -27,37 +32,45 @@ class _GroupedProfileState extends State<GroupedProfile> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 15, top: 5),
+                      padding: const EdgeInsets.only(left: 15, top: 5),
                       child: Align(
                           alignment: Alignment.bottomLeft,
                           child: IconButton(
                               onPressed: () {
-                                // Navigator.push(
-                                //     context,
-                                //     MaterialPageRoute(
-                                //         builder: (context) =>
-                                //             const CodeScreen()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const FollowingList()));
                               },
-                              icon: Icon(Icons.arrow_back_ios,
+                              icon: const Icon(Icons.arrow_back_ios,
                                   color: Colors.white))),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20.0),
-                      width: 110.0,
-                      height: 85.0,
-                      color: Colors.transparent,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CreateGroup()));
+                      },
                       child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("assets/images/inked.png"),
-                                fit: BoxFit.fill),
-                            color: fTextFieldColor,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(8.0))),
+                        margin: const EdgeInsets.only(top: 20.0),
+                        width: 110.0,
+                        height: 85.0,
+                        color: Colors.transparent,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage("assets/images/inked.png"),
+                                  fit: BoxFit.fill),
+                              color: fTextFieldColor,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8.0))),
+                        ),
                       ),
                     ),
                     RatingBar.builder(
@@ -65,13 +78,11 @@ class _GroupedProfileState extends State<GroupedProfile> {
                       itemCount: 5,
                       unratedColor: fTextFieldColor,
                       itemSize: 25,
-                      itemBuilder: (context, _) => Icon(
+                      itemBuilder: (context, _) => const Icon(
                         Icons.star,
                         color: Colors.amber,
                       ),
-                      onRatingUpdate: (rating) {
-                        print(rating);
-                      },
+                      onRatingUpdate: (rating) {},
                     ),
                     Text("Cook ware group",
                         style: GoogleFonts.robotoSlab(
@@ -94,7 +105,7 @@ class _GroupedProfileState extends State<GroupedProfile> {
                         Image.asset("assets/images/groupmessage.png"),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ElevatedButton(
@@ -194,15 +205,15 @@ class _GroupedProfileState extends State<GroupedProfile> {
                             fontSize: 18,
                             color: Colors.white),
                         textAlign: TextAlign.center),
-                    Divider(
+                    const Divider(
                       color: Colors.black,
                       thickness: 1.0,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 3,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20),
+                      margin: const EdgeInsets.only(left: 20, right: 20),
                       child: Text(
                           "We bring the best conversations on food and recipe. "
                           "new category of cuisines. Join our group and support.",
@@ -212,7 +223,7 @@ class _GroupedProfileState extends State<GroupedProfile> {
                               fontSize: 18,
                               color: Colors.white)),
                     ),
-                    Divider(
+                    const Divider(
                       color: Colors.black,
                       thickness: 1.0,
                     ),
@@ -226,7 +237,8 @@ class _GroupedProfileState extends State<GroupedProfile> {
                                 color: Colors.white,
                                 width: MediaQuery.of(context).size.width,
                                 child: TabBar(
-                                  indicatorPadding: EdgeInsets.only(left: 30,right: 30),
+                                  indicatorPadding: const EdgeInsets.only(
+                                      left: 30, right: 30),
                                   tabs: [
                                     Tab(
                                         icon: Image.asset(
@@ -242,32 +254,128 @@ class _GroupedProfileState extends State<GroupedProfile> {
                                   ],
                                 ),
                               ),
-                              Container(
-                                  height: 400,
+                              SizedBox(
+                                  height: 300,
                                   child: TabBarView(children: <Widget>[
-                                    Container(
-                                      child: Center(
-                                        child: Text('Display Tab 1',
-                                            style: TextStyle(
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.bold)),
+                                    SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height,
+                                      child: ListView.builder(
+                                          itemCount: follower.length,
+                                          itemBuilder: (context, index) {
+                                            FollowersModel followersModel =
+                                                follower[index];
+                                            return ListTile(
+                                                leading: Container(
+                                                  width: 60.0,
+                                                  height: 120.0,
+                                                  color: Colors.transparent,
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                          image: AssetImage(
+                                                              followersModel
+                                                                  .image),
+                                                          fit: BoxFit.fill),
+                                                      color: fTextFieldColor,
+                                                      borderRadius:
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  30.0)),
+                                                    ),
+                                                  ),
+                                                ),
+                                                title: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 25.0),
+                                                  child: Text(
+                                                    followersModel.name,
+                                                    style: GoogleFonts.rosarivo(
+                                                        fontStyle:
+                                                            FontStyle.normal,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        fontSize: 14,
+                                                        color: Colors.white),
+                                                  ),
+                                                ),
+                                                subtitle: Text(
+                                                    followersModel.desc,
+                                                    style: GoogleFonts.roboto(
+                                                        fontStyle:
+                                                            FontStyle.normal,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        fontSize: 12,
+                                                        color: Colors.white)),
+                                                trailing: ElevatedButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      // pressAttention = !pressAttention;
+                                                    });
+                                                  },
+                                                  child: Text(
+                                                    followersModel.followButton,
+                                                    style: GoogleFonts.rosarivo(
+                                                        fontStyle:
+                                                            FontStyle.normal,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        fontSize: 14,
+                                                        color: fTextFieldColor),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                  style: ButtonStyle(
+                                                      backgroundColor:
+                                                          MaterialStateProperty.all<Color>(
+                                                              fFollowButtonColor),
+                                                      shape: MaterialStateProperty.all<
+                                                              RoundedRectangleBorder>(
+                                                          const RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius.all(
+                                                                      Radius.circular(
+                                                                          22.0)),
+                                                              side: BorderSide(
+                                                                  color:
+                                                                      fFollowButtonBorderColor,
+                                                                  width:
+                                                                      1.0)))),
+                                                ));
+                                          }),
+                                    ),
+                                    Center(
+                                      child: GridView.builder(
+                                        gridDelegate:
+                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                                crossAxisCount: 3,
+                                                mainAxisSpacing: 3,
+                                                crossAxisSpacing: 5),
+                                        itemCount: video.length,
+                                        itemBuilder: (context, index) {
+                                          VideoModel videoModel = video[index];
+                                          return GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            VideoScreen(
+                                                                videoUrl: videoModel
+                                                                    .videoUrl)));
+                                              },
+                                              child: Image.network(
+                                                  videoModel.thumb_url));
+                                        },
                                       ),
                                     ),
-                                    Container(
-                                      child: Center(
-                                        child: Text('Display Tab 2',
-                                            style: TextStyle(
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.bold)),
-                                      ),
-                                    ),
-                                    Container(
-                                      child: Center(
-                                        child: Text('Display Tab 3',
-                                            style: TextStyle(
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.bold)),
-                                      ),
+                                    const Center(
+                                      child: Text('Display Tab 3',
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.bold)),
                                     ),
                                   ]))
                             ])),
@@ -277,115 +385,3 @@ class _GroupedProfileState extends State<GroupedProfile> {
         ));
   }
 }
-// Container(
-// height: MediaQuery.of(context).size.height,
-// child: TabBarView(children: [
-// Container(
-// child: Center(
-// child: Text('Display Tab 1',
-// style: TextStyle(
-// fontSize: 22, fontWeight: FontWeight.bold)),
-// ),
-// ),
-// Container(
-// child: Center(
-// child: Text('Display Tab 2',
-// style: TextStyle(
-// fontSize: 22, fontWeight: FontWeight.bold)),
-// ),
-// ),
-// Container(
-// child: Center(
-// child: Text('Display Tab 3',
-// style: TextStyle(
-// fontSize: 22, fontWeight: FontWeight.bold)),
-// ),
-// ),
-// ]),
-// )
-
-// DefaultTabController(
-// ,
-//
-// indicatorColor: Colors.black,
-// indicatorPadding:
-// EdgeInsets.only(left: 35, right: 35),
-// tabs: [
-// Tab(
-// icon:
-// ,
-// ),
-// Tab(
-// icon: Image.asset("assets/images/video.png"),
-// ),
-// Tab(
-// icon:
-// Image.asset("assets/images/podcasticon.png"),
-// ),
-// ],
-// ),
-//
-// ),
-
-// Container(
-// width: MediaQuery
-//     .of(context)
-// .size
-//     .width,
-// height: 40,
-// color: Colors.white,
-// child: DefaultTabController(
-// length: 3, // length of tabs
-// child: Column(
-// crossAxisAlignment: CrossAxisAlignment.stretch,
-// children: [
-// Container(
-// child: TabBar(
-// indicatorColor: Colors.black,
-// indicatorPadding: EdgeInsets.only(left: 35,right: 35),
-// tabs: [
-// Tab(
-// icon: Image.asset(
-// "assets/images/checkeduser.png")),
-// Tab(
-// icon: Image.asset(
-// "assets/images/video.png"),
-// ),
-// Tab(
-// icon: Image.asset(
-// "assets/images/podcasticon.png"),
-// ),
-// ],
-// ),
-// ),
-// Container(
-// // height: 400,
-// child: TabBarView(children: [
-// Container(
-// child: Center(
-// child: Text('Display Tab 1',
-// style: TextStyle(
-// fontSize: 22,
-// fontWeight: FontWeight.bold)),
-// ),
-// ),
-// Container(
-// child: Center(
-// child: Text('Display Tab 2',
-// style: TextStyle(
-// fontSize: 22,
-// fontWeight: FontWeight.bold)),
-// ),
-// ),
-// Container(
-// child: Center(
-// child: Text('Display Tab 3',
-// style: TextStyle(
-// fontSize: 22,
-// fontWeight: FontWeight.bold)),
-// ),
-// ),
-// ]),
-// ),
-// ],
-// ))),
