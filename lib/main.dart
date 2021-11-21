@@ -1,16 +1,6 @@
-import 'package:cookup/views/create_group.dart';
-import 'package:cookup/views/create_rom_changes.dart';
-import 'package:cookup/views/feed_room_setting_option.dart';
-import 'package:cookup/views/follower_list.dart';
-import 'package:cookup/views/following_list.dart';
-import 'package:cookup/views/grouped_profile.dart';
-import 'package:cookup/views/home.dart';
-import 'package:cookup/views/interest.dart';
-import 'package:cookup/views/login.dart';
-import 'package:cookup/views/open_room.dart';
-import 'package:cookup/views/pers_profile.dart';
-import 'package:cookup/views/photo_icon_chng.dart';
-import 'package:cookup/views/tcu_profile.dart';
+import 'package:cookup/views/instant_message.dart';
+import 'package:cookup/views/tuc_room.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: const TucRoom(),
     );
   }
 }

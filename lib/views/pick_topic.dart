@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InterestScreen extends StatefulWidget {
-  const InterestScreen({Key? key}) : super(key: key);
+class PickTopic extends StatefulWidget {
+  const PickTopic({Key? key}) : super(key: key);
 
   @override
-  _InterestScreenState createState() => _InterestScreenState();
+  _PickTopicState createState() => _PickTopicState();
 }
 
-class _InterestScreenState extends State<InterestScreen> {
+class _PickTopicState extends State<PickTopic> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -42,7 +42,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 height: 30,
               ),
               Text(
-                "Interest",
+                "Pick A Topic",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.nunito(
                     fontStyle: FontStyle.normal,
@@ -54,7 +54,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 height: 11,
               ),
               Text(
-                "Search Interests",
+                "Search Topic",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.robotoSlab(
                     fontStyle: FontStyle.normal,
@@ -80,7 +80,7 @@ class _InterestScreenState extends State<InterestScreen> {
                           contentPadding: const EdgeInsets.only(
                               left: 50, right: 50, bottom: 8),
                           border: InputBorder.none,
-                          hintText: 'Find Interest that fits you',
+                          hintText: 'Find a Topic that fits you Group',
                           hintStyle: GoogleFonts.robotoSlab(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
