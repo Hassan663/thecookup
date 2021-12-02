@@ -28,5 +28,11 @@ const fSheetLineColor = Color(0xFF161515);
 const fSheetBorderLineColor = Color(0xFF464242);
 const fRoomTitleBoxColor = Color(0xFF25848B);
 const fRoomAccessibilityColor = Color(0xFF0B5358);
+const fRoomOptionListBgColor = Color(0xFF629C5D);
+const fDialogButtonColor = Color(0xFFFAEBEB);
 
-
+const appBgColor = Color(0xFF000000);
+const primary = Color(0xFFFC2D55);
+const secondary =  Color(0xFF19D5F1);
+const white =  Color(0xFFFFFFFF);
+const black =  Color(0xFF000000);

@@ -1,8 +1,9 @@
 import 'package:cookup/constants/color_constant.dart';
-import 'package:cookup/views/interest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'interest.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -151,11 +152,11 @@ class _SettingScreenState extends State<SettingScreen> {
                         padding: const EdgeInsets.only(left: 18.0, right: 18.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            // Navigator.push(
-                                // context,
-                                // MaterialPageRoute(
-                                //     builder: (context) =>
-                                //         const InterestScreen()));
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const InterestScreen()));
                           },
                           child: Align(
                             alignment: Alignment.centerLeft,
@@ -448,8 +449,8 @@ class _SettingScreenState extends State<SettingScreen> {
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
                                   const RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(13.0)),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(13.0)),
                                       side: BorderSide(
                                           color: Colors.black, width: 1.0)))),
                         ),

@@ -44,7 +44,7 @@ class _FollowingListState extends State<FollowingList> {
                                 color: Colors.white))),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Center(
                     child: Text(

@@ -17,8 +17,7 @@ class BootomBr extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 50,
-              width: 170,
+              width: MediaQuery.of(context).size.width * 0.36,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -49,6 +48,11 @@ class BootomBr extends StatelessWidget {
             Row(
               children: [
                 Image.asset("assets/images/wifi.png"),
+                GestureDetector(
+                  onTap: (){
+
+                  },
+                    child: Image.asset("assets/images/wifi.png")),
                 Image.asset("assets/images/Plus.png"),
                 Image.asset("assets/images/hand1.png"),
               ],

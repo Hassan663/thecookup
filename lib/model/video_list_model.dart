@@ -44,7 +44,8 @@ List<Map<String, dynamic>> videoList = [
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
         "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
+  },
+  {
     "videoUrl":
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
@@ -55,7 +56,8 @@ List<Map<String, dynamic>> videoList = [
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
         "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
+  },
+  {
     "videoUrl":
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
@@ -66,29 +68,8 @@ List<Map<String, dynamic>> videoList = [
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
         "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
-    "videoUrl":
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumb_url":
-        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
   },
   {
-    "videoUrl":
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumb_url":
-        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
-    "videoUrl":
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumb_url":
-        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },
-  {
-    "videoUrl":
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumb_url":
-        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  }, {
     "videoUrl":
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
@@ -123,7 +104,8 @@ List<Map<String, dynamic>> videoList = [
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
         "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
+  },
+  {
     "videoUrl":
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
@@ -134,7 +116,8 @@ List<Map<String, dynamic>> videoList = [
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
         "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
+  },
+  {
     "videoUrl":
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
@@ -145,7 +128,8 @@ List<Map<String, dynamic>> videoList = [
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
         "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
+  },
+  {
     "videoUrl":
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
@@ -156,7 +140,32 @@ List<Map<String, dynamic>> videoList = [
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":
         "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
-  },{
+  },
+  {
+    "videoUrl":
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumb_url":
+        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
+  },
+  {
+    "videoUrl":
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumb_url":
+        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
+  },
+  {
+    "videoUrl":
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumb_url":
+        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
+  },
+  {
+    "videoUrl":
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumb_url":
+        "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bbb-splash.png",
+  },
+  {
     "videoUrl":
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "thumb_url":

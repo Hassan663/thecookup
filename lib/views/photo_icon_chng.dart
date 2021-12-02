@@ -2,7 +2,6 @@ import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/views/profile_pic_shape.dart';
 import 'package:cookup/widget/widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PhotoIconChange extends StatefulWidget {

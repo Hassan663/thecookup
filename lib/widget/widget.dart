@@ -1,7 +1,32 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/views/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../views/bottom_nav_bar.dart';
+
+// class CustomText extends StatelessWidget {
+//   final String text;
+//   final double? fontSize;
+//   final FontWeight? fontWeight;
+//   final Color colors;
+//   final TextStyle textStyle;
+//   final GoogleFonts googleFonts;
+//
+//   const CustomText(
+//       {Key? key, required this.text, required this.textStyle, this.fontWeight, required this.colors, required this.fontSize, this.googleFonts})
+//       : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       text,
+//       textAlign: TextAlign.center,
+//       style: GoogleFonts,
+//     );
+//   }
+// }
 
 //EditText
 InputDecoration loginPageInputDecoration() {
@@ -17,9 +42,21 @@ InputDecoration loginPageInputDecoration() {
 BoxDecoration backgroundImage(String image) {
   return BoxDecoration(
       image: DecorationImage(
-        image: AssetImage(image),
-        fit: BoxFit.fill,
-      ));
+    image: AssetImage(image),
+    fit: BoxFit.fill,
+  ));
+}
+
+Text robotoFont36Text(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        fontSize: 36,
+        color: Colors.white),
+    textAlign: TextAlign.center,
+  );
 }
 
 // textStyle
@@ -47,18 +84,6 @@ Text robotoFont18Text(String text) {
     textAlign: TextAlign.center,
   );
 }
-// textStyle
-Text robotoFont11Text(String text) {
-  return Text(
-    text,
-    style: GoogleFonts.roboto(
-        fontStyle: FontStyle.normal,
-        fontWeight: FontWeight.w700,
-        fontSize: 11,
-        color: Colors.white),
-    textAlign: TextAlign.center,
-  );
-}
 
 Text robotoFont14Text(String text) {
   return Text(
@@ -72,6 +97,19 @@ Text robotoFont14Text(String text) {
   );
 }
 
+// textStyle
+Text robotoFont11Text(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        fontSize: 11,
+        color: Colors.white),
+    textAlign: TextAlign.center,
+  );
+}
+
 Text registerText(String text) {
   return Text(
     text,
@@ -80,13 +118,13 @@ Text registerText(String text) {
         fontWeight: FontWeight.w700,
         fontSize: 14,
         color: fTextColor),
-
   );
 }
 
 ElevatedButton rectangleShapeButton(String text) {
   return ElevatedButton(
     onPressed: () {
+      HomeScreen();
       // showModalBottomSheet(
       //     isScrollControlled: true,
       //     backgroundColor: Colors.transparent,
@@ -106,10 +144,8 @@ ElevatedButton rectangleShapeButton(String text) {
     //   textAlign: TextAlign.center,
     // ),
     style: ButtonStyle(
-        backgroundColor:
-        MaterialStateProperty.all<Color>(fButtonLoginColor),
-        shape:
-        MaterialStateProperty.all<RoundedRectangleBorder>(
+        backgroundColor: MaterialStateProperty.all<Color>(fButtonLoginColor),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             const RoundedRectangleBorder(
                 borderRadius: BorderRadius.zero,
                 side: BorderSide(color: Colors.black)))),
@@ -220,6 +256,7 @@ class _FilterChipWithImageWidgetState extends State<FilterChipWithImageWidget> {
     );
   }
 }
+
 
 // class ColoredSafeArea extends StatelessWidget {
 //   final Widget child;

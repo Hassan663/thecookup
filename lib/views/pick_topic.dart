@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'create_group.dart';
+
 class PickTopic extends StatefulWidget {
   const PickTopic({Key? key}) : super(key: key);
 
@@ -34,7 +36,7 @@ class _PickTopicState extends State<PickTopic> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const SettingScreen()));
+                                  builder: (context) => const CreateGroup()));
                         },
                         icon: Icon(Icons.arrow_back_ios, color: Colors.white))),
               ),

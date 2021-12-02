@@ -1,4 +1,4 @@
-import 'package:cookup/views/login.dart';
+import 'package:cookup/views/tuc_room.dart';
 
 class UserProfile {
   UserProfile({
@@ -15,39 +15,39 @@ class UserProfile {
   static List<UserProfile> UserProfileDetailsList = [
     UserProfile(
         name: "Ellisha",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Autumn",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Noa",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Danika",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Kiana",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Danika",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Ellisha",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Kiana",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Noa",
-        page: LoginScreen(),
+        page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
   ];
 }

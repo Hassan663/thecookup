@@ -39,10 +39,11 @@ class _SetupScreenState extends State<SetupScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const CodeScreen()));
+                                      builder: (context) =>
+                                          const CodeScreen()));
                             },
-                            icon:
-                                Icon(Icons.arrow_back_ios, color: Colors.white))),
+                            icon: Icon(Icons.arrow_back_ios,
+                                color: Colors.white))),
                   ),
                   SizedBox(
                     height: 60,
@@ -259,13 +260,13 @@ class _SetupScreenState extends State<SetupScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const InterestScreen()));
+                              builder: (context) => const ProfilePicShapeScreen()));
                     },
                     child: Container(
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/images/advancebtn.png"))),
+                              image:
+                                  AssetImage("assets/images/advancebtn.png"))),
                       height: 104,
                       width: 105,
                       child: Container(

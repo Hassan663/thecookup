@@ -3,6 +3,8 @@ import 'package:cookup/model/follower_list_model.dart';
 import 'package:cookup/model/video_list_model.dart';
 import 'package:cookup/views/create_group.dart';
 import 'package:cookup/views/following_list.dart';
+import 'package:cookup/views/instant_message.dart';
+import 'package:cookup/views/pers_profile.dart';
 import 'package:cookup/views/video_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,27 +52,19 @@ class _GroupedProfileState extends State<GroupedProfile> {
                               icon: const Icon(Icons.arrow_back_ios,
                                   color: Colors.white))),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const CreateGroup()));
-                      },
+                    Container(
+                      margin: const EdgeInsets.only(top: 20.0),
+                      width: 110.0,
+                      height: 85.0,
+                      color: Colors.transparent,
                       child: Container(
-                        margin: const EdgeInsets.only(top: 20.0),
-                        width: 110.0,
-                        height: 85.0,
-                        color: Colors.transparent,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage("assets/images/inked.png"),
-                                  fit: BoxFit.fill),
-                              color: fTextFieldColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8.0))),
-                        ),
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/inked.png"),
+                                fit: BoxFit.fill),
+                            color: fTextFieldColor,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.0))),
                       ),
                     ),
                     RatingBar.builder(
@@ -256,128 +250,154 @@ class _GroupedProfileState extends State<GroupedProfile> {
                               ),
                               SizedBox(
                                   height: 300,
-                                  child: TabBarView(children: <Widget>[
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height,
-                                      child: ListView.builder(
-                                          itemCount: follower.length,
-                                          itemBuilder: (context, index) {
-                                            FollowersModel followersModel =
-                                                follower[index];
-                                            return ListTile(
-                                                leading: Container(
-                                                  width: 60.0,
-                                                  height: 120.0,
-                                                  color: Colors.transparent,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                              followersModel
-                                                                  .image),
-                                                          fit: BoxFit.fill),
-                                                      color: fTextFieldColor,
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  30.0)),
+                                  child: TabBarView(
+                                      physics: BouncingScrollPhysics(),
+                                      children: [
+                                        SizedBox(
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height,
+                                          child: ListView.builder(
+                                              itemCount: follower.length,
+                                              itemBuilder: (context, index) {
+                                                FollowersModel followersModel =
+                                                    follower[index];
+                                                return ListTile(
+                                                    leading: GestureDetector(
+                                                      onTap: () {
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        PersonProfileScreen()));
+                                                      },
+                                                      child: Container(
+                                                        width: 60.0,
+                                                        height: 120.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          image: DecorationImage(
+                                                              image: AssetImage(
+                                                                  followersModel
+                                                                      .image),
+                                                              fit: BoxFit.fill),
+                                                          color:
+                                                              fTextFieldColor,
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                      .all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          30.0)),
+                                                        ),
+                                                      ),
                                                     ),
-                                                  ),
-                                                ),
-                                                title: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          top: 25.0),
-                                                  child: Text(
-                                                    followersModel.name,
-                                                    style: GoogleFonts.rosarivo(
-                                                        fontStyle:
-                                                            FontStyle.normal,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                                subtitle: Text(
-                                                    followersModel.desc,
-                                                    style: GoogleFonts.roboto(
-                                                        fontStyle:
-                                                            FontStyle.normal,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 12,
-                                                        color: Colors.white)),
-                                                trailing: ElevatedButton(
-                                                  onPressed: () {
-                                                    setState(() {
-                                                      // pressAttention = !pressAttention;
-                                                    });
+                                                    title: Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              top: 25.0),
+                                                      child: Text(
+                                                        followersModel.name,
+                                                        style: GoogleFonts
+                                                            .rosarivo(
+                                                                fontStyle:
+                                                                    FontStyle
+                                                                        .normal,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                                fontSize: 14,
+                                                                color: Colors
+                                                                    .white),
+                                                      ),
+                                                    ),
+                                                    subtitle: Text(
+                                                        followersModel.desc,
+                                                        style:
+                                                            GoogleFonts.roboto(
+                                                                fontStyle:
+                                                                    FontStyle
+                                                                        .normal,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w700,
+                                                                fontSize: 12,
+                                                                color: Colors
+                                                                    .white)),
+                                                    trailing: ElevatedButton(
+                                                      onPressed: () {
+                                                        setState(() {
+                                                          // pressAttention = !pressAttention;
+                                                        });
+                                                      },
+                                                      child: Text(
+                                                        followersModel
+                                                            .followButton,
+                                                        style: GoogleFonts.rosarivo(
+                                                            fontStyle: FontStyle
+                                                                .normal,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            fontSize: 14,
+                                                            color:
+                                                                fTextFieldColor),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                      style: ButtonStyle(
+                                                          backgroundColor:
+                                                              MaterialStateProperty.all<Color>(
+                                                                  fFollowButtonColor),
+                                                          shape: MaterialStateProperty.all<
+                                                                  RoundedRectangleBorder>(
+                                                              const RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius.all(
+                                                                          Radius.circular(
+                                                                              22.0)),
+                                                                  side: BorderSide(
+                                                                      color:
+                                                                          fFollowButtonBorderColor,
+                                                                      width:
+                                                                          1.0)))),
+                                                    ));
+                                              }),
+                                        ),
+                                        Center(
+                                          child: GridView.builder(
+                                            gridDelegate:
+                                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                                    crossAxisCount: 3,
+                                                    mainAxisSpacing: 3,
+                                                    crossAxisSpacing: 5),
+                                            itemCount: video.length,
+                                            itemBuilder: (context, index) {
+                                              VideoModel videoModel =
+                                                  video[index];
+                                              return GestureDetector(
+                                                  onTap: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                VideoScreen(
+                                                                    videoUrl:
+                                                                        videoModel
+                                                                            .videoUrl)));
                                                   },
-                                                  child: Text(
-                                                    followersModel.followButton,
-                                                    style: GoogleFonts.rosarivo(
-                                                        fontStyle:
-                                                            FontStyle.normal,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
-                                                        color: fTextFieldColor),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                  style: ButtonStyle(
-                                                      backgroundColor:
-                                                          MaterialStateProperty.all<Color>(
-                                                              fFollowButtonColor),
-                                                      shape: MaterialStateProperty.all<
-                                                              RoundedRectangleBorder>(
-                                                          const RoundedRectangleBorder(
-                                                              borderRadius:
-                                                                  BorderRadius.all(
-                                                                      Radius.circular(
-                                                                          22.0)),
-                                                              side: BorderSide(
-                                                                  color:
-                                                                      fFollowButtonBorderColor,
-                                                                  width:
-                                                                      1.0)))),
-                                                ));
-                                          }),
-                                    ),
-                                    Center(
-                                      child: GridView.builder(
-                                        gridDelegate:
-                                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                                crossAxisCount: 3,
-                                                mainAxisSpacing: 3,
-                                                crossAxisSpacing: 5),
-                                        itemCount: video.length,
-                                        itemBuilder: (context, index) {
-                                          VideoModel videoModel = video[index];
-                                          return GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            VideoScreen(
-                                                                videoUrl: videoModel
-                                                                    .videoUrl)));
-                                              },
-                                              child: Image.network(
-                                                  videoModel.thumb_url));
-                                        },
-                                      ),
-                                    ),
-                                    const Center(
-                                      child: Text('Display Tab 3',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                    ),
-                                  ]))
+                                                  child: Image.network(
+                                                      videoModel.thumb_url));
+                                            },
+                                          ),
+                                        ),
+                                        const Center(
+                                          child: Text('Display Tab 3',
+                                              style: TextStyle(
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight.bold)),
+                                        ),
+                                      ]))
                             ])),
                   ],
                 )),

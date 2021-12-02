@@ -1,4 +1,5 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/views/profile_pic_shape.dart';
 import 'package:cookup/views/settings.dart';
 import 'package:cookup/widget/widget.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,8 @@ class _InterestScreenState extends State<InterestScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const SettingScreen()));
+                                  builder: (context) =>
+                                      const SettingScreen()));
                         },
                         icon: Icon(Icons.arrow_back_ios, color: Colors.white))),
               ),
@@ -263,7 +265,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 ],
               ),
               Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.center,
                 child: Container(
                   child: Wrap(
                     spacing: 5.0,
@@ -294,7 +296,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 ),
               ),
               Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.center,
                 child: Container(
                   child: Wrap(
                     spacing: 5.0,
@@ -479,7 +481,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 ),
               ),
               Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.center,
                 child: Container(
                   child: Wrap(
                     spacing: 5.0,
@@ -575,7 +577,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 ),
               ),
               Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.center,
                 child: Container(
                   child: Wrap(
                     spacing: 5.0,

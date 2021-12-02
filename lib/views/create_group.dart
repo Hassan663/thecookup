@@ -1,12 +1,12 @@
 import 'package:cookup/constants/color_constant.dart';
+import 'package:cookup/views/group_profile_pic_shape.dart';
 import 'package:cookup/views/grouped_profile.dart';
-import 'package:cookup/views/photo_icon_chng.dart';
+import 'package:cookup/views/pick_topic.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'create_rom_changes.dart';
-import 'feed_room_setting_option.dart';
 
 class CreateGroup extends StatefulWidget {
   const CreateGroup({Key? key}) : super(key: key);
@@ -39,14 +39,14 @@ class _CreateGroupState extends State<CreateGroup> {
                     alignment: Alignment.centerRight,
                     child: IconButton(
                         onPressed: () {
-                         Navigator.pop(context);
+                          Navigator.pop(context);
                         },
                         icon: Image.asset("assets/images/cross.png")),
                   ),
                 ),
                 Container(
-                  width: 120,
-                  height: 100,
+                  width: MediaQuery.of(context).size.width * 0.35,
+                  height: MediaQuery.of(context).size.height * 0.15,
                   decoration: const BoxDecoration(
                       color: fTextFieldColor,
                       image: DecorationImage(
@@ -67,14 +67,14 @@ class _CreateGroupState extends State<CreateGroup> {
                   height: 3,
                 ),
                 SizedBox(
-                  width: 280,
-                  height: 26,
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  height: MediaQuery.of(context).size.width * 0.07,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const PhotoIconChange()));
+                              builder: (context) => const GroupShapeChange()));
                     },
                     child: Text(
                       "Change Shape of Photo",
@@ -101,8 +101,8 @@ class _CreateGroupState extends State<CreateGroup> {
                   height: 12,
                 ),
                 Container(
-                  width: 330.0,
-                  height: 44.0,
+                  width: MediaQuery.of(context).size.width * 0.92,
+                  height: MediaQuery.of(context).size.height * 0.06,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(11),
                       color: fTextFieldColor),
@@ -126,8 +126,8 @@ class _CreateGroupState extends State<CreateGroup> {
                   height: 40,
                 ),
                 Container(
-                  width: 330.0,
-                  height: 130.0,
+                  width: MediaQuery.of(context).size.width * 0.92,
+                  // height: 10.0,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(8),
@@ -153,43 +153,34 @@ class _CreateGroupState extends State<CreateGroup> {
                   height: 30,
                 ),
                 Container(
-                    width: 330.0,
-                    height: 190.0,
+                    width: MediaQuery.of(context).size.width * 0.92,
+                    height: MediaQuery.of(context).size.height * 0.26,
                     color: fTextFieldColor,
                     child: Column(
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 8.0, right: 8.0, top: 8.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RomChanges()));
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Membership",
-                                  style: GoogleFonts.roboto(
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 18,
-                                      color: Colors.black),
-                                ),
-                                Text(
-                                  "Open to Public",
-                                  style: GoogleFonts.roboto(
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 12,
-                                      color: Colors.black),
-                                ),
-                              ],
-                            ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Membership",
+                                style: GoogleFonts.roboto(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 18,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                "Open to Public",
+                                style: GoogleFonts.roboto(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12,
+                                    color: Colors.black),
+                              ),
+                            ],
                           ),
                         ),
                         const Divider(
@@ -244,7 +235,7 @@ class _CreateGroupState extends State<CreateGroup> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const RomChanges()));
+                                          const PickTopic()));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -313,8 +304,7 @@ class _CreateGroupState extends State<CreateGroup> {
                   height: 40,
                 ),
                 Container(
-                  width: 330.0,
-                  height: 130.0,
+                  width: MediaQuery.of(context).size.width * 0.92,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),

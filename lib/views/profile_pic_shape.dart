@@ -118,12 +118,13 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                       style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all<Color>(fTextFieldColor),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              const RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(100.0)),
-                                  side: BorderSide(
-                                      color: Colors.white, width: 1.0)))),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(100.0)),
+                                      side: BorderSide(
+                                          color: Colors.white, width: 1.0)))),
                     ),
                   ),
                   SizedBox(
@@ -153,11 +154,13 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                           textAlign: TextAlign.center,
                         ),
                         style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(fDoneButtonColor),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                fDoneButtonColor),
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
                                 const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12.0)),
                             ))),
                       ),
                     ),

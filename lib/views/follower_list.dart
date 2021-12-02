@@ -16,10 +16,6 @@ class FollowersList extends StatefulWidget {
 }
 
 class _FollowersListState extends State<FollowersList> {
-  bool pressAttention = false;
-
-  // bool cmbscritta = false;
-
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -33,7 +29,6 @@ class _FollowersListState extends State<FollowersList> {
           child: Scaffold(
               backgroundColor: Colors.transparent,
               body: ListView(
-                physics: const BouncingScrollPhysics(),
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 15, top: 5),
@@ -50,7 +45,7 @@ class _FollowersListState extends State<FollowersList> {
                                 color: Colors.white))),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Center(
                     child: Text(
@@ -68,6 +63,7 @@ class _FollowersListState extends State<FollowersList> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height,
                     child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
                         itemCount: follower.length,
                         itemBuilder: (context, index) {
                           FollowersModel followersModel = follower[index];
@@ -105,21 +101,14 @@ class _FollowersListState extends State<FollowersList> {
                                     fontSize: 12,
                                     color: Colors.white)),
                             trailing: ElevatedButton(
-                              onPressed: () {
-                                setState(() {
-                                  pressAttention = !pressAttention;
-                                });
-                              },
+                              onPressed: () {},
                               child: Text(
                                 followersModel.followButton,
                                 style: GoogleFonts.rosarivo(
-                                  fontStyle: FontStyle.normal,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: pressAttention
-                                      ? Colors.grey
-                                      : Colors.blue,
-                                ),
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: fFollowTextColor),
                                 textAlign: TextAlign.center,
                               ),
                               style: ButtonStyle(

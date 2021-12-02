@@ -3,6 +3,7 @@ import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/model/message_model.dart';
 import 'package:cookup/views/feed.dart';
 import 'package:cookup/views/sign_up_code.dart';
+import 'package:cookup/views/tcu_profile.dart';
 import 'package:cookup/widget/app_icons.dart';
 import 'package:cookup/widget/appp_text_widget.dart';
 import 'package:cookup/widget/bottom_bar.dart';
@@ -22,6 +23,7 @@ class _TucRoomState extends State<TucRoom> {
   bool isSelected1 = false;
   bool isSelected2 = false;
   bool isVideoVisible = false;
+
   _updateState(bool isvalue) {
     setState(() {
       isVideoVisible = isvalue;
@@ -44,7 +46,7 @@ class _TucRoomState extends State<TucRoom> {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -52,8 +54,7 @@ class _TucRoomState extends State<TucRoom> {
                     children: [
                       IconClass(
                         iconColor: Colors.white,
-                        iconSize: 30,
-                        iconData: Icons.chevron_left,
+                        iconData: Icons.arrow_back_ios,
                       ),
                       MyText(
                         "All Rooms",
@@ -77,11 +78,19 @@ class _TucRoomState extends State<TucRoom> {
                       SizedBox(
                         width: 10,
                       ),
-                      ClipOval(
-                          child: Image.asset(
-                        "assets/images/kahari.png",
-                        height: 40,
-                      )),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MyProfile()));
+                        },
+                        child: ClipOval(
+                            child: Image.asset(
+                          "assets/images/kahari.png",
+                          height: 40,
+                        )),
+                      ),
                     ],
                   )
                 ],
@@ -274,117 +283,130 @@ class _TucRoomState extends State<TucRoom> {
                   )
                 : Container(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.4,
-                width: MediaQuery.of(context).size.width * 0.9,
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     color: Colors.white,
                     image: DecorationImage(
                         image: AssetImage("assets/images/background.png"),
                         fit: BoxFit.cover)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0, top: 8),
+                      child: Row(
+                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          ClipOval(
+                              child: Image.asset(
+                            "assets/images/kahari.png",
+                            height: 20,
+                          )),
+                          // SizedBox(
+                          //   width: 3,
+                          // ),
                           MyText(
                             "Sports Talk Syndicated",
                             color: Color(0xff868383),
                             fontSize: 14,
                           ),
-                          Row(
-                            children: [
-                              MyText(
-                                "126",
-                                color: Color(0xff787777),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              MyText(
-                                "26",
-                                color: Color(0xff787777),
-                              ),
-                              IconClass(
-                                iconColor: Color(0xff787777),
-                                iconData: Icons.school_outlined,
-                              ),
-                              IconClass(
-                                iconColor: Color(0xff787777),
-                                iconData: Icons.more_horiz_outlined,
-                              )
-                            ],
-                          )
+                          // SizedBox(
+                          //   width: 3,
+                          // ),
+                          Image(image: AssetImage("assets/images/dish.png")),
+                          MyText(
+                            "126",
+                            color: Color(0xff787777),
+                          ),
+                          Image(image: AssetImage("assets/images/soup.png")),
+
+                          Image(image: AssetImage("assets/images/div.png")),
+
+                          // SizedBox(
+                          //   width: 10,
+                          // ),
+                          MyText(
+                            "26",
+                            color: Color(0xff787777),
+                          ),
+                          Image(image: AssetImage("assets/images/dish.png")),
+                          // IconClass(
+                          //   iconColor: Color(0xff787777),
+                          //   iconData: Icons.school_outlined,
+                          // ),
+                          // IconClass(
+                          //   iconColor: Color(0xff787777),
+                          //   iconData: Icons.more_horiz_outlined,
+                          // )
                         ],
                       ),
-                      Row(
+                    ),
+                    Container(
+                      width: 280,
+                      height: 30,
+                      child: Row(
                         children: [
                           MyText(
-                            "Talking how to design The Cook Up in your Figma",
+                            "Talking how to design The Cook Up",
                             color: Colors.black,
                             fontSize: 14,
-                            textAlign: TextAlign.left,
+                            textAlign: TextAlign.center,
                           ),
-                          IconClass(
-                            iconColor: Colors.black,
-                            iconData: Icons.video_call,
-                          )
+                          // IconClass(
+                          //   iconColor: Colors.black,
+                          //   iconData: Icons.video_call,
+                          // )
                         ],
                       ),
-                      Container(
-                        height: MediaQuery.of(context).size.height * 0.27,
-                        child: GridView.builder(
-                            itemCount:
-                                UserProfile.UserProfileDetailsList.length,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3,
-                              childAspectRatio: 2,
-                              mainAxisExtent: 100,
-                              crossAxisSpacing: 10.0,
-                              //mainAxisSpacing: 10.0
-                            ),
-                            itemBuilder: (BuildContext context, int index) {
-                              return InkWell(
-                                onTap: () {
-                                  AppRoutes.push(
-                                      context,
-                                      UserProfile
-                                          .UserProfileDetailsList[index].page);
-                                },
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    ClipOval(
-                                        child: Image.asset(UserProfile
-                                            .UserProfileDetailsList[index]
-                                            .imagepath!)),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 10),
-                                      child: Row(
-                                        children: [
-                                          Image.asset(
-                                              "assets/images/location.png"),
-                                          MyText(UserProfile
-                                              .UserProfileDetailsList[index]
-                                              .name!),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            }),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.27,
+                      child: GridView.builder(
+                          itemCount: UserProfile.UserProfileDetailsList.length,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            childAspectRatio: 2,
+                            mainAxisExtent: 100,
+                            crossAxisSpacing: 10.0,
+                            //mainAxisSpacing: 10.0
+                          ),
+                          itemBuilder: (BuildContext context, int index) {
+                            return InkWell(
+                              onTap: () {
+                                AppRoutes.push(
+                                    context,
+                                    UserProfile
+                                        .UserProfileDetailsList[index].page);
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ClipOval(
+                                      child: Image.asset(UserProfile
+                                          .UserProfileDetailsList[index]
+                                          .imagepath!)),
+                                  Row(
+                                    children: [
+                                      Image.asset("assets/images/location.png"),
+                                      MyText(UserProfile
+                                          .UserProfileDetailsList[index].name!),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                  ],
                 ),
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Column(
               children: [

@@ -19,10 +19,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/setupbg.png"),
-                fit: BoxFit.cover)),
+        decoration: backgroundImage("assets/images/setupbg.png"),
         child: SafeArea(
           child: Scaffold(
             backgroundColor: Colors.transparent,
@@ -48,15 +45,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   const SizedBox(
                     height: 60,
                   ),
-                  Text(
-                    "Forgot\nPassword?",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.roboto(
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 36,
-                        color: Colors.white),
-                  ),
+                  robotoFont36Text("Forgot\nPassword?"),
                   Padding(
                     padding: const EdgeInsets.only(left: 30.0, top: 130),
                     child: Row(
@@ -113,7 +102,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                                   const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
-                                          Radius.circular(100.0)),
+                                          Radius.circular(30.0)),
                                       side: BorderSide(
                                           color: Colors.white, width: 1.0)))),
                     ),
@@ -171,8 +160,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage("assets/images/star.png"))),
-                      height: 59,
-                      width: 67,
+                      height: 63,
+                      width: 75,
                       child: Container(
                         margin: const EdgeInsets.only(top: 20),
                         child: Text(

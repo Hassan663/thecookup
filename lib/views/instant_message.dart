@@ -28,36 +28,37 @@ class _InstantMessageState extends State<InstantMessage> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Image.asset("assets/images/notifications.png"),
-                          SizedBox(
+                          const SizedBox(
                             width: 15,
                           ),
                           Image.asset("assets/images/calender.png"),
-                          SizedBox(
+                          const SizedBox(
                             width: 15,
                           ),
                           Image.asset("assets/images/invite.png"),
-                          SizedBox(
+                          const SizedBox(
                             width: 15,
                           ),
                           Image.asset("assets/images/setting.png")
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Row(children: <Widget>[
+                    Row(children: const <Widget>[
                       Expanded(
                           child: Divider(
                         color: Colors.black,
@@ -78,22 +79,22 @@ class _InstantMessageState extends State<InstantMessage> {
                         height: 2,
                       )),
                     ]),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     buildMessageRow("Ellisha", "assets/images/kahari.png",
                         "Invite to room", () {}, () {}),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     buildMessageRow("Imani", "assets/images/kahari.png",
                         "Invite to room", () {}, () {}),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     buildMessageRow("Andrey", "assets/images/kahari.png",
                         "Invite to room", () {}, () {}),
-                    Row(children: <Widget>[
+                    Row(children: const <Widget>[
                       Expanded(
                           child: Divider(
                         color: Colors.black,
@@ -155,7 +156,7 @@ class _InstantMessageState extends State<InstantMessage> {
                         ],
                       ),
                     ),
-                    Row(children: <Widget>[
+                    Row(children: const <Widget>[
                       Expanded(
                           child: Divider(
                         color: Colors.black,
@@ -176,15 +177,16 @@ class _InstantMessageState extends State<InstantMessage> {
                         height: 2,
                       )),
                     ]),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.3,
                       child: GridView.builder(
+                          physics: const BouncingScrollPhysics(),
                           itemCount: UserProfile.UserProfileDetailsList.length,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 3,
                                   childAspectRatio: 2,
                                   mainAxisExtent: 100,
@@ -204,7 +206,7 @@ class _InstantMessageState extends State<InstantMessage> {
                                       child: Image.asset(UserProfile
                                           .UserProfileDetailsList[index]
                                           .imagepath!)),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   MyText(UserProfile
@@ -230,7 +232,7 @@ class _InstantMessageState extends State<InstantMessage> {
         Row(
           children: [
             ClipOval(child: Image.asset(imagePath)),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             MyText(
@@ -241,27 +243,27 @@ class _InstantMessageState extends State<InstantMessage> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Column(
           children: [
             Image.asset("assets/images/Chat.png"),
-            InkWell(onTap: onchatPressed, child: MyText("OpenChat"))
+            InkWell(onTap: onchatPressed, child: const MyText("OpenChat"))
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Container(
           height: 20,
           width: 120,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(20)),
               color: Colors.white),
           child: MyText(
             subtitle,
-            color: Color(0xff28717B),
+            color: const Color(0xff28717B),
             textAlign: TextAlign.center,
           ),
         ),

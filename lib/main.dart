@@ -1,6 +1,6 @@
-import 'package:cookup/views/instant_message.dart';
-import 'package:cookup/views/tuc_room.dart';
-
+import 'package:cookup/views/login.dart';
+import 'package:cookup/views/room_option_list.dart';
+import 'package:cookup/views/video.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TucRoom(),
+      home: const LoginScreen(),
     );
   }
 }

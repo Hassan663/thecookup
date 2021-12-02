@@ -30,13 +30,14 @@ class SignUpScreen extends StatelessWidget {
                   child: Align(
                       alignment: Alignment.bottomLeft,
                       child: IconButton(
-                          onPressed: (){
+                          onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => const LoginScreen()));
                           },
-                          icon: Icon(Icons.arrow_back_ios, color: Colors.white))),
+                          icon:
+                              Icon(Icons.arrow_back_ios, color: Colors.white))),
                 ),
                 SizedBox(
                   height: 80,

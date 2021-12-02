@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'create_group.dart';
 import 'follower_list.dart';
 
 class MyProfile extends StatefulWidget {
@@ -375,6 +376,23 @@ class _MyProfileState extends State<MyProfile> {
                           shape: BoxShape.circle,
                         ),
                       ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CreateGroup()));
+                        },
+                        icon: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CreateGroup()));
+                            },
+                            child: Icon(Icons.add_location, size: 35)),
+                      ),
                     ],
                   ),
                   DefaultTabController(
@@ -404,8 +422,7 @@ class _MyProfileState extends State<MyProfile> {
                             ),
                             SizedBox(
                                 height: 300,
-                                child: TabBarView(
-                                    children:[
+                                child: TabBarView(children: [
                                   SizedBox(
                                       height:
                                           MediaQuery.of(context).size.height,

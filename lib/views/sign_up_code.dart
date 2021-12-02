@@ -35,13 +35,15 @@ class _CodeScreenState extends State<CodeScreen> {
                     child: Align(
                         alignment: Alignment.bottomLeft,
                         child: IconButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const SignUpScreen()));
+                                      builder: (context) =>
+                                          const SignUpScreen()));
                             },
-                            icon: Icon(Icons.arrow_back_ios, color: Colors.white))),
+                            icon: Icon(Icons.arrow_back_ios,
+                                color: Colors.white))),
                   ),
                   SizedBox(
                     height: 150,
@@ -82,11 +84,12 @@ class _CodeScreenState extends State<CodeScreen> {
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
                               fSendAgainButtonColor),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(4)),
-                                  side: BorderSide(color: Colors.black)))),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(4)),
+                                      side: BorderSide(color: Colors.black)))),
                     ),
                   ),
                   SizedBox(
@@ -112,16 +115,16 @@ class _CodeScreenState extends State<CodeScreen> {
                             color: Colors.white),
                       ),
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(fContButtonColor),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(12)),
-                                  side: BorderSide(color: Colors.black)))),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              fContButtonColor),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(12)),
+                                      side: BorderSide(color: Colors.black)))),
                     ),
                   ),
-
                   SizedBox(
                     height: 30,
                   ),
