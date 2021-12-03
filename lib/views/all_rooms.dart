@@ -1,6 +1,6 @@
-import 'package:cookup/constants/app_routes.dart';
 import 'package:cookup/model/message_model.dart';
 import 'package:cookup/views/tcu_profile.dart';
+import 'package:cookup/views/view_profile_from_room.dart';
 import 'package:cookup/widget/all_room_bottom.dart';
 import 'package:cookup/widget/app_icons.dart';
 import 'package:cookup/widget/appp_text_widget.dart';
@@ -24,7 +24,7 @@ class _AllRoomsState extends State<AllRooms> {
         statusBarIconBrightness: Brightness.light));
     return SafeArea(
         child: Scaffold(
-      bottomNavigationBar: BootomForAllRoom(),
+      bottomNavigationBar: const BootomForAllRoom(),
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -43,7 +43,7 @@ class _AllRoomsState extends State<AllRooms> {
                         iconColor: Colors.white,
                         iconData: Icons.arrow_back_ios,
                       ),
-                      MyText(
+                      const MyText(
                         "All Rooms",
                         color: Colors.white,
                         fontSize: 16,
@@ -59,10 +59,11 @@ class _AllRoomsState extends State<AllRooms> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => FeedRoomSettingOption()));
+                                    builder: (context) =>
+                                        const FeedRoomSettingOption()));
                           },
                           child: Image.asset("assets/images/Law Book.png")),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       GestureDetector(
@@ -83,7 +84,7 @@ class _AllRoomsState extends State<AllRooms> {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(right: 20),
               child: MyText(
                 "Runtime: 22m",
@@ -97,7 +98,7 @@ class _AllRoomsState extends State<AllRooms> {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     color: Colors.white,
                     image: DecorationImage(
@@ -118,7 +119,7 @@ class _AllRoomsState extends State<AllRooms> {
                           // SizedBox(
                           //   width: 3,
                           // ),
-                          MyText(
+                          const MyText(
                             "Sports Talk Syndicated",
                             color: Color(0xff868383),
                             fontSize: 14,
@@ -126,23 +127,27 @@ class _AllRoomsState extends State<AllRooms> {
                           // SizedBox(
                           //   width: 3,
                           // ),
-                          Image(image: AssetImage("assets/images/dish.png")),
-                          MyText(
+                          const Image(
+                              image: AssetImage("assets/images/dish.png")),
+                          const MyText(
                             "126",
                             color: Color(0xff787777),
                           ),
-                          Image(image: AssetImage("assets/images/soup.png")),
+                          const Image(
+                              image: AssetImage("assets/images/soup.png")),
 
-                          Image(image: AssetImage("assets/images/div.png")),
+                          const Image(
+                              image: AssetImage("assets/images/div.png")),
 
                           // SizedBox(
                           //   width: 10,
                           // ),
-                          MyText(
+                          const MyText(
                             "26",
                             color: Color(0xff787777),
                           ),
-                          Image(image: AssetImage("assets/images/dish.png")),
+                          const Image(
+                              image: AssetImage("assets/images/dish.png")),
                           // IconClass(
                           //   iconColor: Color(0xff787777),
                           //   iconData: Icons.school_outlined,
@@ -154,11 +159,11 @@ class _AllRoomsState extends State<AllRooms> {
                         ],
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: 280,
                       height: 30,
                       child: Row(
-                        children: [
+                        children: const [
                           MyText(
                             "Talking how to design The Cook Up",
                             color: Colors.black,
@@ -172,12 +177,12 @@ class _AllRoomsState extends State<AllRooms> {
                         ],
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.27,
                       child: GridView.builder(
                           itemCount: UserProfile.UserProfileDetailsList.length,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                             childAspectRatio: 2,
                             mainAxisExtent: 100,
@@ -207,7 +212,7 @@ class _AllRoomsState extends State<AllRooms> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Column(
@@ -215,14 +220,14 @@ class _AllRoomsState extends State<AllRooms> {
                 Container(
                   height: 30,
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20.0),
                       topLeft: Radius.circular(20.0),
                     ),
                   ),
-                  child: MyText(
+                  child: const MyText(
                     "Followed by the Speakers",
                     color: Colors.black,
                     textAlign: TextAlign.center,
@@ -235,20 +240,31 @@ class _AllRoomsState extends State<AllRooms> {
                     padding: const EdgeInsets.symmetric(vertical: 20),
                     child: GridView.builder(
                         itemCount: UserProfile.UserProfileDetailsList.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            childAspectRatio: 2,
-                            mainAxisExtent: 100,
-                            crossAxisSpacing: 10.0,
-                            mainAxisSpacing: 10.0),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                childAspectRatio: 2,
+                                mainAxisExtent: 100,
+                                crossAxisSpacing: 10.0,
+                                mainAxisSpacing: 10.0),
                         itemBuilder: (BuildContext context, int index) {
                           return Column(
                             children: [
-                              ClipOval(
-                                  child: Image.asset(UserProfile
-                                      .UserProfileDetailsList[index]
-                                      .imagepath!)),
-                              SizedBox(
+                              GestureDetector(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      context: context,
+                                      builder: (context) =>
+                                          const ViewProfileFromRoom());
+                                },
+                                child: ClipOval(
+                                    child: Image.asset(UserProfile
+                                        .UserProfileDetailsList[index]
+                                        .imagepath!)),
+                              ),
+                              const SizedBox(
                                 height: 10,
                               ),
                               MyText(UserProfile

@@ -22,11 +22,11 @@ class SignUpScreen extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 15, top: 5),
+                  padding: const EdgeInsets.only(left: 15, top: 5),
                   child: Align(
                       alignment: Alignment.bottomLeft,
                       child: IconButton(
@@ -36,10 +36,10 @@ class SignUpScreen extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => const LoginScreen()));
                           },
-                          icon:
-                              Icon(Icons.arrow_back_ios, color: Colors.white))),
+                          icon: const Icon(Icons.arrow_back_ios,
+                              color: Colors.white))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 80,
                 ),
                 Text(
@@ -51,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
                       fontSize: 24,
                       color: Colors.white),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 17,
                 ),
                 Image.asset("assets/images/cooklogo.png"),
@@ -64,7 +64,7 @@ class SignUpScreen extends StatelessWidget {
                     decoration: signupPageInputDecoration("Enter #"),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 60,
                 ),
                 Row(
@@ -86,7 +86,7 @@ class SignUpScreen extends StatelessWidget {
                           color: fOvalShapeColor,
                           border: Border.all(color: Colors.black, width: 1.0),
                           borderRadius:
-                              new BorderRadius.all(Radius.elliptical(80, 60)),
+                              const BorderRadius.all(Radius.elliptical(80, 60)),
                         ),
                         child: Center(
                           child: Text(
@@ -104,7 +104,7 @@ class SignUpScreen extends StatelessWidget {
                     Image.asset("assets/images/fork.png"),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
               ],

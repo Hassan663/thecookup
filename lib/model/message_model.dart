@@ -18,36 +18,22 @@ class UserProfile {
         page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
-        name: "Autumn",
-        page: TucRoom(),
-        imagepath: "assets/images/kahari.png"),
+        name: "Autumn", page: TucRoom(), imagepath: "assets/images/kahari.png"),
     UserProfile(
-        name: "Noa",
-        page: TucRoom(),
-        imagepath: "assets/images/kahari.png"),
+        name: "Noa", page: TucRoom(), imagepath: "assets/images/kahari.png"),
     UserProfile(
-        name: "Danika",
-        page: TucRoom(),
-        imagepath: "assets/images/kahari.png"),
+        name: "Danika", page: TucRoom(), imagepath: "assets/images/kahari.png"),
     UserProfile(
-        name: "Kiana",
-        page: TucRoom(),
-        imagepath: "assets/images/kahari.png"),
+        name: "Kiana", page: TucRoom(), imagepath: "assets/images/kahari.png"),
     UserProfile(
-        name: "Danika",
-        page: TucRoom(),
-        imagepath: "assets/images/kahari.png"),
+        name: "Danika", page: TucRoom(), imagepath: "assets/images/kahari.png"),
     UserProfile(
         name: "Ellisha",
         page: TucRoom(),
         imagepath: "assets/images/kahari.png"),
     UserProfile(
-        name: "Kiana",
-        page: TucRoom(),
-        imagepath: "assets/images/kahari.png"),
+        name: "Kiana", page: TucRoom(), imagepath: "assets/images/kahari.png"),
     UserProfile(
-        name: "Noa",
-        page: TucRoom(),
-        imagepath: "assets/images/kahari.png"),
+        name: "Noa", page: TucRoom(), imagepath: "assets/images/kahari.png"),
   ];
 }

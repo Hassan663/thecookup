@@ -58,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen>
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => OpenCalendar()));
+                                        builder: (context) =>
+                                            const OpenCalendar()));
                               },
                               icon: Image.asset("assets/images/calender.png")),
                           IconButton(
@@ -153,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen>
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.67,
                         child: TabBarView(
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           controller: _tabController,
                           children: [
                             ListView(

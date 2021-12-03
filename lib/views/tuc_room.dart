@@ -39,7 +39,7 @@ class _TucRoomState extends State<TucRoom> {
         statusBarIconBrightness: Brightness.light));
     return SafeArea(
         child: Scaffold(
-      bottomNavigationBar: BootomBr(),
+      bottomNavigationBar: const BootomBr(),
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -58,7 +58,7 @@ class _TucRoomState extends State<TucRoom> {
                         iconColor: Colors.white,
                         iconData: Icons.arrow_back_ios,
                       ),
-                      MyText(
+                      const MyText(
                         "All Rooms",
                         color: Colors.white,
                         fontSize: 16,
@@ -82,10 +82,10 @@ class _TucRoomState extends State<TucRoom> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        FeedRoomSettingOption()));
+                                        const FeedRoomSettingOption()));
                           },
                           child: Image.asset("assets/images/Law Book.png")),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       GestureDetector(
@@ -106,7 +106,7 @@ class _TucRoomState extends State<TucRoom> {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(right: 20),
               child: MyText(
                 "Runtime: 22m",
@@ -136,10 +136,11 @@ class _TucRoomState extends State<TucRoom> {
                                     context: context,
                                     builder: (BuildContext context) {
                                       return AlertDialog(
-                                        contentPadding: EdgeInsets.symmetric(
-                                            horizontal: 0, vertical: 0),
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                horizontal: 0, vertical: 0),
                                         content: Container(
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(20)),
                                           ),
@@ -147,22 +148,21 @@ class _TucRoomState extends State<TucRoom> {
                                           height: 120,
                                           child: Column(
                                             children: [
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 10,
                                               ),
                                               InkWell(
                                                 onTap: () {},
-                                                child: MyText(
+                                                child: const MyText(
                                                   "Mini Screen",
                                                   color: Colors.green,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                               ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        vertical: 10),
+                                              const Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 10),
                                                 child: Divider(
                                                   color: Colors.black,
                                                   height: 2,
@@ -171,19 +171,18 @@ class _TucRoomState extends State<TucRoom> {
                                               InkWell(
                                                 onTap: () {
                                                   AppRoutes.push(
-                                                      context, Feed());
+                                                      context, const Feed());
                                                 },
-                                                child: MyText(
+                                                child: const MyText(
                                                   "Full Screen",
                                                   color: Colors.black,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                               ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        vertical: 10),
+                                              const Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 10),
                                                 child: Divider(
                                                   color: Colors.black,
                                                   height: 2,
@@ -191,7 +190,7 @@ class _TucRoomState extends State<TucRoom> {
                                               ),
                                               InkWell(
                                                 onTap: () {},
-                                                child: MyText(
+                                                child: const MyText(
                                                   "Hide",
                                                   color: Colors.black,
                                                   fontSize: 14,
@@ -213,8 +212,8 @@ class _TucRoomState extends State<TucRoom> {
                         ],
                       ),
                       Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -297,7 +296,7 @@ class _TucRoomState extends State<TucRoom> {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     color: Colors.white,
                     image: DecorationImage(
@@ -318,7 +317,7 @@ class _TucRoomState extends State<TucRoom> {
                           // SizedBox(
                           //   width: 3,
                           // ),
-                          MyText(
+                          const MyText(
                             "Sports Talk Syndicated",
                             color: Color(0xff868383),
                             fontSize: 14,
@@ -326,23 +325,27 @@ class _TucRoomState extends State<TucRoom> {
                           // SizedBox(
                           //   width: 3,
                           // ),
-                          Image(image: AssetImage("assets/images/dish.png")),
-                          MyText(
+                          const Image(
+                              image: AssetImage("assets/images/dish.png")),
+                          const MyText(
                             "126",
                             color: Color(0xff787777),
                           ),
-                          Image(image: AssetImage("assets/images/soup.png")),
+                          const Image(
+                              image: AssetImage("assets/images/soup.png")),
 
-                          Image(image: AssetImage("assets/images/div.png")),
+                          const Image(
+                              image: AssetImage("assets/images/div.png")),
 
                           // SizedBox(
                           //   width: 10,
                           // ),
-                          MyText(
+                          const MyText(
                             "26",
                             color: Color(0xff787777),
                           ),
-                          Image(image: AssetImage("assets/images/dish.png")),
+                          const Image(
+                              image: AssetImage("assets/images/dish.png")),
                           // IconClass(
                           //   iconColor: Color(0xff787777),
                           //   iconData: Icons.school_outlined,
@@ -354,11 +357,11 @@ class _TucRoomState extends State<TucRoom> {
                         ],
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: 280,
                       height: 30,
                       child: Row(
-                        children: [
+                        children: const [
                           MyText(
                             "Talking how to design The Cook Up",
                             color: Colors.black,
@@ -372,12 +375,12 @@ class _TucRoomState extends State<TucRoom> {
                         ],
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.27,
                       child: GridView.builder(
                           itemCount: UserProfile.UserProfileDetailsList.length,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                             childAspectRatio: 2,
                             mainAxisExtent: 100,
@@ -407,7 +410,7 @@ class _TucRoomState extends State<TucRoom> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Column(
@@ -415,14 +418,14 @@ class _TucRoomState extends State<TucRoom> {
                 Container(
                   height: 30,
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20.0),
                       topLeft: Radius.circular(20.0),
                     ),
                   ),
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: MyText(
                       "Followed by the Speakers",
@@ -438,12 +441,13 @@ class _TucRoomState extends State<TucRoom> {
                     padding: const EdgeInsets.symmetric(vertical: 20),
                     child: GridView.builder(
                         itemCount: UserProfile.UserProfileDetailsList.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            childAspectRatio: 2,
-                            mainAxisExtent: 100,
-                            crossAxisSpacing: 10.0,
-                            mainAxisSpacing: 10.0),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                childAspectRatio: 2,
+                                mainAxisExtent: 100,
+                                crossAxisSpacing: 10.0,
+                                mainAxisSpacing: 10.0),
                         itemBuilder: (BuildContext context, int index) {
                           return Column(
                             children: [
@@ -451,7 +455,7 @@ class _TucRoomState extends State<TucRoom> {
                                   child: Image.asset(UserProfile
                                       .UserProfileDetailsList[index]
                                       .imagepath!)),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               MyText(UserProfile

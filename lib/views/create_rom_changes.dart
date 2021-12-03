@@ -1,4 +1,3 @@
-import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/widget/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +43,8 @@ class _RomChangesState extends State<RomChanges> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const CreateGroup()));
+                                      builder: (context) =>
+                                          const CreateGroup()));
                             },
                             icon: const Icon(Icons.arrow_back_ios,
                                 color: Colors.white))),
@@ -170,11 +170,11 @@ class _RomChangesState extends State<RomChanges> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 40,
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 8.0),
+                        margin: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           "Transfer Ownership",
                           textAlign: TextAlign.center,
@@ -201,7 +201,7 @@ class _RomChangesState extends State<RomChanges> {
                               fontSize: 14,
                               color: Colors.white),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         SizedBox(
@@ -457,7 +457,7 @@ class _RomChangesState extends State<RomChanges> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Padding(
@@ -475,7 +475,7 @@ class _RomChangesState extends State<RomChanges> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -496,7 +496,8 @@ class _RomChangesState extends State<RomChanges> {
                         ),
                       ),
                       Checkbox(
-                        fillColor:MaterialStateProperty.all<Color>(Colors.grey),
+                        fillColor:
+                            MaterialStateProperty.all<Color>(Colors.grey),
                         value: value,
                         onChanged: (value) {
                           setState(() {

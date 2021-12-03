@@ -32,7 +32,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                   physics: const BouncingScrollPhysics(),
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 20, top: 20),
+                      padding: const EdgeInsets.only(left: 20, top: 20),
                       child: Align(
                           alignment: Alignment.bottomLeft,
                           child: IconButton(
@@ -43,7 +43,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                                         builder: (context) =>
                                             const Discover()));
                               },
-                              icon: Icon(Icons.arrow_back_ios,
+                              icon: const Icon(Icons.arrow_back_ios,
                                   color: Colors.white))),
                     ),
                     Row(
@@ -55,7 +55,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                                 fontWeight: FontWeight.w400,
                                 fontSize: 24,
                                 color: Colors.white)),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Padding(
@@ -76,11 +76,12 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 18, right: 18, top: 6),
+                      margin:
+                          const EdgeInsets.only(left: 18, right: 18, top: 6),
                       height: MediaQuery.of(context).size.height * 0.4,
                       // color: Colors.yellow,
                       child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           itemCount: follower.length,
                           itemBuilder: (context, index) {
                             FollowersModel followersModel = follower[index];
@@ -156,7 +157,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                     ),
                     Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                             child: Divider(
                           color: Colors.black,
                           thickness: 1.0,
@@ -183,7 +184,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                             ),
                           ),
                         )),
-                        Expanded(
+                        const Expanded(
                             child: Divider(
                           color: Colors.black,
                           thickness: 1.0,
@@ -191,7 +192,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 14.0),
+                      padding: const EdgeInsets.only(left: 14.0),
                       child: Text(
                         "Category in Knowledge",
                         style: GoogleFonts.robotoSlab(
@@ -201,7 +202,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                             color: Colors.white),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Align(
@@ -217,7 +218,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -230,11 +231,12 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                       textAlign: TextAlign.center,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 18, right: 18, top: 6),
+                      margin:
+                          const EdgeInsets.only(left: 18, right: 18, top: 6),
                       height: MediaQuery.of(context).size.height * 0.4,
                       // color: Colors.yellow,
                       child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           itemCount: follower.length,
                           itemBuilder: (context, index) {
                             FollowersModel followersModel = follower[index];
@@ -308,7 +310,7 @@ class _DiscoversInterestState extends State<DiscoversInterest> {
                             );
                           }),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                   ],

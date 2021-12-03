@@ -16,7 +16,7 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -26,7 +26,7 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Padding(
@@ -41,7 +41,7 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                           color: Colors.white),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 73,
                   ),
                   Row(
@@ -52,7 +52,7 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                         width: 95.0,
                         color: Colors.transparent,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: fTextFieldColor,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(75.0))),
@@ -63,7 +63,7 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                         width: 95.0,
                         color: Colors.transparent,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: fTextFieldColor,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(75.0))),
@@ -74,7 +74,7 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                         width: 95.0,
                         color: Colors.transparent,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: fTextFieldColor,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(75.0))),
@@ -93,7 +93,7 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   SizedBox(
@@ -127,13 +127,13 @@ class _ProfilePicShapeScreenState extends State<ProfilePicShapeScreen> {
                                           color: Colors.white, width: 1.0)))),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 130,
                   ),
                   Material(
                     borderRadius: BorderRadius.circular(12.0),
                     elevation: 10,
-                    shadowColor: Color(0xFF00000040),
+                    shadowColor: Colors.black,
                     child: SizedBox(
                       width: 110,
                       height: 44,

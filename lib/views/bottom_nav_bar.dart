@@ -3,7 +3,6 @@ import 'package:cookup/views/home.dart';
 import 'package:cookup/views/instant_message.dart';
 import 'package:cookup/views/open_room.dart';
 import 'package:cookup/views/tcu_profile.dart';
-import 'package:cookup/views/tuc_room.dart';
 import 'package:cookup/views/video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -44,8 +43,8 @@ class _BottomNavState extends State<BottomNav>
           backgroundColor: Colors.transparent,
           body: TabBarView(
             controller: _tabController,
-            physics: NeverScrollableScrollPhysics(),
-            children: [
+            physics: const NeverScrollableScrollPhysics(),
+            children: const [
               Center(child: HomeScreen()),
               Center(child: Text("2")),
               Center(child: Text("3")),
@@ -55,7 +54,7 @@ class _BottomNavState extends State<BottomNav>
           ),
           bottomNavigationBar: Container(
             height: 80,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: fRoomTitleBoxColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
@@ -75,7 +74,7 @@ class _BottomNavState extends State<BottomNav>
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => TikTokVideos()));
+                                builder: (context) => const TikTokVideos()));
                       },
                       child: Image.asset("assets/images/buffetvideos.png")),
                 ),
@@ -86,7 +85,7 @@ class _BottomNavState extends State<BottomNav>
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
                             context: context,
-                            builder: (context) => OpenRoom());
+                            builder: (context) => const OpenRoom());
                       },
                       child: Image.asset("assets/images/grp.png")),
                 ),
@@ -99,7 +98,7 @@ class _BottomNavState extends State<BottomNav>
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MyProfile()));
+                                builder: (context) => const MyProfile()));
                       },
                       child: ClipOval(
                           child: Image.asset("assets/images/kahari.png"))),

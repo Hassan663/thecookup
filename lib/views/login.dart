@@ -1,11 +1,9 @@
 import 'package:cookup/constants/color_constant.dart';
-import 'package:cookup/views/home.dart';
-import 'package:cookup/views/signup.dart';
 import 'package:cookup/views/bottom_nav_bar.dart';
+import 'package:cookup/views/signup.dart';
 import 'package:cookup/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'forgot_pw.dart';
 
@@ -37,7 +35,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding:
                       const EdgeInsets.only(left: 30.0, top: 20.0, right: 30.0),
-
                   child: robotoFont24Text(
                       "Thank You For Joining The Cook Up where we bring discussion "
                       "to a new level enjoy the app and share with friends"),
@@ -82,8 +79,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => BottomNav()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BottomNav()));
                     },
                     child: robotoFont18Text("Login"),
                     style: ButtonStyle(

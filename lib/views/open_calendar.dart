@@ -73,7 +73,7 @@ class _OpenCalendarState extends State<OpenCalendar>
                       onPressed: () {},
                       icon: Image.asset("assets/images/calender.png")),
                 ]),
-                Text(
+                const Text(
                   "Current & Future\nScheduled Event",
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
@@ -91,14 +91,14 @@ class _OpenCalendarState extends State<OpenCalendar>
                       // labelColor: Colors.black,
                       indicatorColor: Colors.transparent,
 
-                      tabs: [
-                        const Tab(
+                      tabs: const [
+                        Tab(
                           child: Text(
                             "Weekly",
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        const Tab(
+                        Tab(
                           child: Text(
                             "Monthly",
                             textAlign: TextAlign.center,
@@ -109,11 +109,11 @@ class _OpenCalendarState extends State<OpenCalendar>
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.4,
                       child: TabBarView(
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         controller: _tabController,
                         children: [
                           Card(
-                            margin: EdgeInsets.only(left: 40, right: 40),
+                            margin: const EdgeInsets.only(left: 40, right: 40),
                             color: Colors.black,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
@@ -134,8 +134,8 @@ class _OpenCalendarState extends State<OpenCalendar>
                               },
                               calendarStyle: CalendarStyle(
                                   defaultTextStyle:
-                                      TextStyle(color: Color(0xff7A7585)),
-                                  selectedDecoration: BoxDecoration(
+                                      const TextStyle(color: Color(0xff7A7585)),
+                                  selectedDecoration: const BoxDecoration(
                                       color: fCalendarCircleColor,
                                       shape: BoxShape.circle),
                                   todayDecoration: BoxDecoration(
@@ -149,7 +149,7 @@ class _OpenCalendarState extends State<OpenCalendar>
                               lastDay: DateTime(2050),
                               rowHeight: 35,
                               calendarFormat: format,
-                              headerStyle: HeaderStyle(
+                              headerStyle: const HeaderStyle(
                                   leftChevronMargin:
                                       EdgeInsets.only(left: 25.0),
                                   rightChevronMargin:
@@ -181,21 +181,21 @@ class _OpenCalendarState extends State<OpenCalendar>
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       "This week scheduled Constituent",
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Column(
-                          children: [
+                          children: const [
                             Text(
                               "Daily",
                               textAlign: TextAlign.center,
@@ -211,7 +211,7 @@ class _OpenCalendarState extends State<OpenCalendar>
                           ],
                         ),
                         Column(
-                          children: [
+                          children: const [
                             Text(
                               "Weekly",
                               textAlign: TextAlign.center,
@@ -227,7 +227,7 @@ class _OpenCalendarState extends State<OpenCalendar>
                           ],
                         ),
                         Column(
-                          children: [
+                          children: const [
                             Text(
                               "Monthly",
                               textAlign: TextAlign.center,
@@ -244,14 +244,14 @@ class _OpenCalendarState extends State<OpenCalendar>
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    Divider(
+                    const Divider(
                       color: Colors.black,
                       thickness: 3,
                     ),
-                    Text(
+                    const Text(
                       "Current week\nSchedule",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 18),
@@ -261,7 +261,7 @@ class _OpenCalendarState extends State<OpenCalendar>
                       children: [
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "Sun",
                               textAlign: TextAlign.center,
                               style:
@@ -276,7 +276,7 @@ class _OpenCalendarState extends State<OpenCalendar>
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "M",
                               textAlign: TextAlign.center,
                               style:
@@ -285,13 +285,13 @@ class _OpenCalendarState extends State<OpenCalendar>
                             Container(
                               width: 20,
                               height: 20,
-                              color: Color(0xffFF0000),
+                              color: const Color(0xffFF0000),
                             )
                           ],
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "T",
                               textAlign: TextAlign.center,
                               style:
@@ -300,13 +300,13 @@ class _OpenCalendarState extends State<OpenCalendar>
                             Container(
                               width: 20,
                               height: 20,
-                              color: Color(0xff5C5C71),
+                              color: const Color(0xff5C5C71),
                             )
                           ],
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "W",
                               textAlign: TextAlign.center,
                               style:
@@ -315,13 +315,13 @@ class _OpenCalendarState extends State<OpenCalendar>
                             Container(
                               width: 20,
                               height: 20,
-                              color: Color(0xff177832),
+                              color: const Color(0xff177832),
                             )
                           ],
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "TH",
                               textAlign: TextAlign.center,
                               style:
@@ -330,13 +330,13 @@ class _OpenCalendarState extends State<OpenCalendar>
                             Container(
                               width: 20,
                               height: 20,
-                              color: Color(0xffFFE600),
+                              color: const Color(0xffFFE600),
                             )
                           ],
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "F",
                               textAlign: TextAlign.center,
                               style:
@@ -345,13 +345,13 @@ class _OpenCalendarState extends State<OpenCalendar>
                             Container(
                               width: 20,
                               height: 20,
-                              color: Color(0xff0047FF),
+                              color: const Color(0xff0047FF),
                             )
                           ],
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "Sat",
                               textAlign: TextAlign.center,
                               style:
@@ -360,17 +360,17 @@ class _OpenCalendarState extends State<OpenCalendar>
                             Container(
                               width: 20,
                               height: 20,
-                              color: Color(0xffFF4D00),
+                              color: const Color(0xffFF4D00),
                             )
                           ],
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15.0),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 15.0),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
@@ -382,36 +382,36 @@ class _OpenCalendarState extends State<OpenCalendar>
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 10.0),
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "10:25 AM",
                             style: TextStyle(
                                 fontSize: 10,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Container(
                             width: 14,
                             height: 14,
-                            color: Color(0xff0047FF),
+                            color: const Color(0xff0047FF),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Icon(Icons.missed_video_call)
+                          const Icon(Icons.missed_video_call)
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     )
                   ],

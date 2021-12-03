@@ -234,8 +234,7 @@ class _CreateGroupState extends State<CreateGroup> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const PickTopic()));
+                                      builder: (context) => const PickTopic()));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

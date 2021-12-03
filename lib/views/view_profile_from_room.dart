@@ -16,208 +16,356 @@ class _ViewProfileFromRoomState extends State<ViewProfileFromRoom> {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-        initialChildSize: 0.9,
+        initialChildSize: 0.8,
         minChildSize: 0.5,
-        maxChildSize: 0.9,
+        maxChildSize: 0.8,
         builder: (_, controller) {
           return Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: fBottomSheetColor,
-                  borderRadius: BorderRadius.circular(25)),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(Icons.more_horiz_rounded, color: fTextFieldColor),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Icon(
-                          Icons.close,
-                          color: fTextFieldColor,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(20))),
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
                     children: [
-                      Container(
-                        height: 90.0,
-                        width: 90.0,
-                        color: Colors.transparent,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage("assets/images/charlespf.png"),
-                                  fit: BoxFit.fill),
-                              color: fTextFieldColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30.0))),
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: const [
+                          Icon(Icons.more_horiz_rounded,
+                              color: fTextFieldColor),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Icon(
+                            Icons.close,
+                            color: fTextFieldColor,
+                          ),
+                        ],
                       ),
                       const SizedBox(
-                        width: 5,
+                        height: 10,
                       ),
-                      Container(
-                        height: 90.0,
-                        width: 90.0,
-                        color: Colors.transparent,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage("assets/images/charlespf.png"),
-                                  fit: BoxFit.fill),
-                              color: fTextFieldColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30.0))),
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 90.0,
+                            width: 90.0,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/images/charlespf.png"),
+                                    fit: BoxFit.fill),
+                                color: fTextFieldColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(30.0))),
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            height: 90.0,
+                            width: 90.0,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/images/charlespf.png"),
+                                    fit: BoxFit.fill),
+                                color: fTextFieldColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(30.0))),
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            height: 90.0,
+                            width: 90.0,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/images/charlespf.png"),
+                                    fit: BoxFit.fill),
+                                color: fTextFieldColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(30.0))),
+                          ),
+                        ],
                       ),
                       const SizedBox(
-                        width: 5,
+                        height: 10,
                       ),
-                      Container(
-                        height: 90.0,
-                        width: 90.0,
-                        color: Colors.transparent,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage("assets/images/charlespf.png"),
-                                  fit: BoxFit.fill),
-                              color: fTextFieldColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30.0))),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/images/message.png"),
                       SizedBox(
-                        width: 80,
-                        height: 29,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Follow",
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Image.asset("assets/images/message.png"),
+                            SizedBox(
+                              width: 80,
+                              height: 29,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "Follow",
+                                  style: GoogleFonts.rosarivo(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: fFollowTextColor),
+                                  textAlign: TextAlign.center,
+                                ),
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            fFollowButtonColor),
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(22.0)),
+                                            side: BorderSide(
+                                                color: fFollowButtonBorderColor,
+                                                width: 1.0)))),
+                              ),
+                            ),
+                            Image.asset("assets/images/bell.png"),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Naz T",
                             style: GoogleFonts.rosarivo(
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
-                                color: fFollowTextColor),
+                                color: Colors.white),
+                            textAlign: TextAlign.center),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text("@Tnazi",
+                            style: GoogleFonts.rosarivo(
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.center),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Material(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const FollowersList()));
+                              },
+                              child: SizedBox(
+                                width: 106,
+                                height: 18,
+                                child: Text("22 Followers",
+                                    style: GoogleFonts.rosarivo(
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14,
+                                        color: Colors.white),
+                                    textAlign: TextAlign.center),
+                              ),
+                            ),
+                            color: Colors.transparent,
+                          ),
+                          Material(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const FollowingList()));
+                              },
+                              child: SizedBox(
+                                width: 106,
+                                height: 19,
+                                child: Text("10 Following",
+                                    style: GoogleFonts.rosarivo(
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14,
+                                        color: Colors.white),
+                                    textAlign: TextAlign.center),
+                              ),
+                            ),
+                            color: Colors.transparent,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        "Communication arts major, investor, artist. visit my onlie store",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Profile",
+                            style: TextStyle(color: Colors.black),
                             textAlign: TextAlign.center,
                           ),
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  fFollowButtonColor),
+                                  fRoomOptionListBgColor),
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
                                   const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(22.0)),
-                                      side: BorderSide(
-                                          color: fFollowButtonBorderColor,
-                                          width: 1.0)))),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ))),
                         ),
                       ),
-                      Image.asset("assets/images/bell.png"),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Make Moderator",
+                            style: TextStyle(color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  fRoomOptionListBgColor),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ))),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Move to listeners circle",
+                            style: TextStyle(color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  fRoomOptionListBgColor),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ))),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Kick from room",
+                            style: TextStyle(color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  fRoomOptionListBgColor),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ))),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Ban from room",
+                            style: TextStyle(color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  fRoomOptionListBgColor),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ))),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Set as Special Guest VIP",
+                            style: TextStyle(color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  fRoomOptionListBgColor),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ))),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Naz T",
-                          style: GoogleFonts.rosarivo(
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                              color: Colors.white),
-                          textAlign: TextAlign.center),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("@Tnazi",
-                          style: GoogleFonts.rosarivo(
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                              color: Colors.white),
-                          textAlign: TextAlign.center),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Material(
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const FollowersList()));
-                          },
-                          child: SizedBox(
-                            width: 106,
-                            height: 18,
-                            child: Text("22 Followers",
-                                style: GoogleFonts.rosarivo(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    color: Colors.white),
-                                textAlign: TextAlign.center),
-                          ),
-                        ),
-                        color: Colors.transparent,
-                      ),
-                      Material(
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const FollowingList()));
-                          },
-                          child: SizedBox(
-                            width: 106,
-                            height: 19,
-                            child: Text("10 Following",
-                                style: GoogleFonts.rosarivo(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    color: Colors.white),
-                                textAlign: TextAlign.center),
-                          ),
-                        ),
-                        color: Colors.transparent,
-                      ),
-                    ],
-                  ),
-                  
-                  Text("Communication arts major, investor, artist. visit my onlie store")
-                ],
+                ),
               ));
         });
   }

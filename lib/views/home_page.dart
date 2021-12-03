@@ -6,6 +6,7 @@ import 'package:cookup/widget/left_panel.dart';
 import 'package:cookup/widget/tik_tok_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 

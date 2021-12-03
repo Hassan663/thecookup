@@ -1,4 +1,3 @@
-import 'package:cookup/views/interest.dart';
 import 'package:cookup/views/profile_pic_shape.dart';
 import 'package:cookup/views/sign_up_code.dart';
 import 'package:cookup/widget/widget.dart';
@@ -27,11 +26,11 @@ class _SetupScreenState extends State<SetupScreen> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 15, top: 5),
+                    padding: const EdgeInsets.only(left: 15, top: 5),
                     child: Align(
                         alignment: Alignment.bottomLeft,
                         child: IconButton(
@@ -42,10 +41,10 @@ class _SetupScreenState extends State<SetupScreen> {
                                       builder: (context) =>
                                           const CodeScreen()));
                             },
-                            icon: Icon(Icons.arrow_back_ios,
+                            icon: const Icon(Icons.arrow_back_ios,
                                 color: Colors.white))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 60,
                   ),
                   Text(
@@ -57,7 +56,7 @@ class _SetupScreenState extends State<SetupScreen> {
                         fontSize: 36,
                         color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 55,
                   ),
                   Row(
@@ -104,7 +103,7 @@ class _SetupScreenState extends State<SetupScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0),
-                        child: Container(
+                        child: SizedBox(
                           width: 120,
                           height: 30,
                           child: TextFormField(
@@ -140,7 +139,7 @@ class _SetupScreenState extends State<SetupScreen> {
                               fontSize: 14,
                               color: Colors.white),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
                         SizedBox(
@@ -167,7 +166,7 @@ class _SetupScreenState extends State<SetupScreen> {
                               fontSize: 14,
                               color: Colors.white),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 17,
                         ),
                         SizedBox(
@@ -181,7 +180,7 @@ class _SetupScreenState extends State<SetupScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Text(
@@ -193,7 +192,7 @@ class _SetupScreenState extends State<SetupScreen> {
                         fontSize: 14,
                         color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   SizedBox(
@@ -204,7 +203,7 @@ class _SetupScreenState extends State<SetupScreen> {
                       decoration: loginPageInputDecoration(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 11,
                   ),
                   Text(
@@ -216,7 +215,7 @@ class _SetupScreenState extends State<SetupScreen> {
                         fontSize: 14,
                         color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   SizedBox(
@@ -228,7 +227,7 @@ class _SetupScreenState extends State<SetupScreen> {
                       decoration: loginPageInputDecoration(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 11,
                   ),
                   Text(
@@ -240,7 +239,7 @@ class _SetupScreenState extends State<SetupScreen> {
                         fontSize: 14,
                         color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   SizedBox(
@@ -252,7 +251,7 @@ class _SetupScreenState extends State<SetupScreen> {
                       decoration: loginPageInputDecoration(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   GestureDetector(
@@ -260,7 +259,8 @@ class _SetupScreenState extends State<SetupScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ProfilePicShapeScreen()));
+                              builder: (context) =>
+                                  const ProfilePicShapeScreen()));
                     },
                     child: Container(
                       decoration: const BoxDecoration(

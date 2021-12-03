@@ -87,15 +87,16 @@ class _DiscoverState extends State<Discover> {
                             color: Colors.white),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 18, right: 18, top: 6),
+                      margin:
+                          const EdgeInsets.only(left: 18, right: 18, top: 6),
                       height: MediaQuery.of(context).size.height * 0.4,
                       // color: Colors.yellow,
                       child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           itemCount: follower.length,
                           itemBuilder: (context, index) {
                             FollowersModel followersModel = follower[index];
@@ -171,7 +172,7 @@ class _DiscoverState extends State<Discover> {
                     ),
                     Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                             child: Divider(
                           color: Colors.black,
                           thickness: 1.0,
@@ -198,7 +199,7 @@ class _DiscoverState extends State<Discover> {
                             ),
                           ),
                         )),
-                        Expanded(
+                        const Expanded(
                             child: Divider(
                           color: Colors.black,
                           thickness: 1.0,
@@ -217,11 +218,12 @@ class _DiscoverState extends State<Discover> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 18, right: 18, top: 6),
+                      margin:
+                          const EdgeInsets.only(left: 18, right: 18, top: 6),
                       height: MediaQuery.of(context).size.height * 0.4,
                       // color: Colors.yellow,
                       child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           itemCount: follower.length,
                           itemBuilder: (context, index) {
                             FollowersModel followersModel = follower[index];
@@ -295,7 +297,7 @@ class _DiscoverState extends State<Discover> {
                             );
                           }),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Align(
                       alignment: Alignment.center,
                       child: Wrap(

@@ -26,7 +26,7 @@ class _SettingScreenState extends State<SettingScreen> {
           child: Scaffold(
               backgroundColor: Colors.transparent,
               body: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
                     Padding(
@@ -41,7 +41,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             color: Colors.white),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 37,
                     ),
                     SizedBox(
@@ -73,7 +73,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -105,7 +105,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
                     SizedBox(
@@ -142,7 +142,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -153,10 +153,10 @@ class _SettingScreenState extends State<SettingScreen> {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const InterestScreen()));
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const InterestScreen()));
                           },
                           child: Align(
                             alignment: Alignment.centerLeft,
@@ -180,7 +180,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -212,7 +212,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -244,7 +244,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -276,7 +276,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     Container(
@@ -327,7 +327,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -359,7 +359,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -391,7 +391,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     SizedBox(
@@ -423,12 +423,12 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Material(
                       borderRadius: BorderRadius.circular(13.0),
-                      shadowColor: Color(0xFF00000040),
+                      shadowColor: Colors.black,
                       child: SizedBox(
                         width: 193,
                         height: 42,
@@ -456,7 +456,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 35,
                     ),
                   ],

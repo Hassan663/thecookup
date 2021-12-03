@@ -27,11 +27,11 @@ class _CodeScreenState extends State<CodeScreen> {
         child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 15, top: 5),
+                    padding: const EdgeInsets.only(left: 15, top: 5),
                     child: Align(
                         alignment: Alignment.bottomLeft,
                         child: IconButton(
@@ -42,10 +42,10 @@ class _CodeScreenState extends State<CodeScreen> {
                                       builder: (context) =>
                                           const SignUpScreen()));
                             },
-                            icon: Icon(Icons.arrow_back_ios,
+                            icon: const Icon(Icons.arrow_back_ios,
                                 color: Colors.white))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 150,
                   ),
                   Text(
@@ -57,7 +57,7 @@ class _CodeScreenState extends State<CodeScreen> {
                         fontSize: 36,
                         color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                   ),
                   SizedBox(
@@ -86,13 +86,13 @@ class _CodeScreenState extends State<CodeScreen> {
                               fSendAgainButtonColor),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
+                                  const RoundedRectangleBorder(
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(4)),
                                       side: BorderSide(color: Colors.black)))),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 200,
                   ),
                   SizedBox(
@@ -119,13 +119,13 @@ class _CodeScreenState extends State<CodeScreen> {
                               fContButtonColor),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
+                                  const RoundedRectangleBorder(
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(12)),
                                       side: BorderSide(color: Colors.black)))),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                 ],

@@ -1,5 +1,4 @@
 import 'package:cookup/constants/color_constant.dart';
-import 'package:cookup/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,14 +29,14 @@ class _OpenRoomState extends State<OpenRoom> {
         maxChildSize: 0.95,
         builder: (_, controller) {
           return Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: fBottomSheetColor,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
             child: ListView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               controller: controller,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Center(
@@ -49,7 +48,7 @@ class _OpenRoomState extends State<OpenRoom> {
                           border: Border.all(
                               color: fSheetBorderLineColor, width: 1))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Padding(
@@ -66,17 +65,17 @@ class _OpenRoomState extends State<OpenRoom> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 20.0, right: 20.0),
+                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(22),
                       color: fRoomTitleBoxColor),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       contentPadding:
                           EdgeInsets.only(left: 20.0, bottom: 5, right: 5),
@@ -84,7 +83,7 @@ class _OpenRoomState extends State<OpenRoom> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Padding(
@@ -101,25 +100,25 @@ class _OpenRoomState extends State<OpenRoom> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 20.0, right: 20.0),
+                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(22),
                       color: fRoomTitleBoxColor),
                   child: TextFormField(
                     maxLines: 6,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       contentPadding: EdgeInsets.only(left: 30.0, top: 20),
                       filled: true,
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Padding(
@@ -136,7 +135,7 @@ class _OpenRoomState extends State<OpenRoom> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
@@ -154,7 +153,7 @@ class _OpenRoomState extends State<OpenRoom> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset("assets/images/open.png"),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
                           Text(
@@ -180,7 +179,7 @@ class _OpenRoomState extends State<OpenRoom> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset("assets/images/acolyte.png"),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
                           Text(
@@ -206,7 +205,7 @@ class _OpenRoomState extends State<OpenRoom> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset("assets/images/locked.png"),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
                           Text(
@@ -222,7 +221,7 @@ class _OpenRoomState extends State<OpenRoom> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Center(
@@ -243,16 +242,16 @@ class _OpenRoomState extends State<OpenRoom> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 18.0, left: 18),
-                      child: Container(
+                      child: SizedBox(
                         width: 20,
                         height: 15,
                         child: Checkbox(
-                            side: BorderSide(color: fTextFieldColor),
+                            side: const BorderSide(color: fTextFieldColor),
                             value: ch1,
                             checkColor: Colors.blue[100],
                             onChanged: (value) {
                               setState(() {
-                                this.ch1 = value!;
+                                ch1 = value!;
                               });
                             }),
                       ),
@@ -281,8 +280,8 @@ class _OpenRoomState extends State<OpenRoom> {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 5.0),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 5.0),
                                 child: Icon(
                                   Icons.calendar_today,
                                 ),
@@ -314,8 +313,8 @@ class _OpenRoomState extends State<OpenRoom> {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 8.0),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 8.0),
                                 child: Icon(
                                   Icons.watch_later_outlined,
                                 ),
@@ -325,7 +324,7 @@ class _OpenRoomState extends State<OpenRoom> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -343,12 +342,12 @@ class _OpenRoomState extends State<OpenRoom> {
                                 color: Colors.white),
                           ),
                           Checkbox(
-                              side: BorderSide(color: fTextFieldColor),
+                              side: const BorderSide(color: fTextFieldColor),
                               value: ch2,
                               checkColor: Colors.blue[100],
                               onChanged: (value) {
                                 setState(() {
-                                  this.ch2 = value!;
+                                  ch2 = value!;
                                 });
                               }),
                         ],
@@ -367,12 +366,12 @@ class _OpenRoomState extends State<OpenRoom> {
                                 color: Colors.white),
                           ),
                           Checkbox(
-                              side: BorderSide(color: fTextFieldColor),
+                              side: const BorderSide(color: fTextFieldColor),
                               value: ch3,
                               checkColor: Colors.blue[100],
                               onChanged: (value) {
                                 setState(() {
-                                  this.ch3 = value!;
+                                  ch3 = value!;
                                 });
                               }),
                         ],
@@ -395,12 +394,12 @@ class _OpenRoomState extends State<OpenRoom> {
                                 color: Colors.white),
                           ),
                           Checkbox(
-                              side: BorderSide(color: fTextFieldColor),
+                              side: const BorderSide(color: fTextFieldColor),
                               value: ch4,
                               checkColor: Colors.blue[100],
                               onChanged: (value) {
                                 setState(() {
-                                  this.ch4 = value!;
+                                  ch4 = value!;
                                 });
                               }),
                         ],
@@ -419,12 +418,12 @@ class _OpenRoomState extends State<OpenRoom> {
                                 color: Colors.white),
                           ),
                           Checkbox(
-                              side: BorderSide(color: fTextFieldColor),
+                              side: const BorderSide(color: fTextFieldColor),
                               value: ch5,
                               checkColor: Colors.blue[100],
                               onChanged: (value) {
                                 setState(() {
-                                  this.ch5 = value!;
+                                  ch5 = value!;
                                 });
                               }),
                         ],
@@ -457,12 +456,12 @@ class _OpenRoomState extends State<OpenRoom> {
                       ),
                     ),
                     Checkbox(
-                        side: BorderSide(color: fTextFieldColor),
+                        side: const BorderSide(color: fTextFieldColor),
                         value: ch6,
                         checkColor: Colors.blue[100],
                         onChanged: (value) {
                           setState(() {
-                            this.ch6 = value!;
+                            ch6 = value!;
                           });
                         }),
                     Padding(
@@ -508,12 +507,12 @@ class _OpenRoomState extends State<OpenRoom> {
                       ),
                     ),
                     Checkbox(
-                        side: BorderSide(color: fTextFieldColor),
+                        side: const BorderSide(color: fTextFieldColor),
                         value: ch7,
                         checkColor: Colors.blue[100],
                         onChanged: (value) {
                           setState(() {
-                            this.ch7 = value!;
+                            ch7 = value!;
                           });
                         }),
                   ],
@@ -532,19 +531,19 @@ class _OpenRoomState extends State<OpenRoom> {
                       ),
                     ),
                     Checkbox(
-                        side: BorderSide(color: fTextFieldColor),
+                        side: const BorderSide(color: fTextFieldColor),
                         value: ch7,
                         checkColor: Colors.blue[100],
                         onChanged: (value) {
                           setState(() {
-                            this.ch7 = value!;
+                            ch7 = value!;
                           });
                         }),
                   ],
                 ),
 
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 80),
+                  margin: const EdgeInsets.symmetric(horizontal: 80),
                   height: 26,
                   child: ElevatedButton(
                     onPressed: () {},
@@ -569,7 +568,7 @@ class _OpenRoomState extends State<OpenRoom> {
                                         color: Colors.black, width: 1.0)))),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
               ],

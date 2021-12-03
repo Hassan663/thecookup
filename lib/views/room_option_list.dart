@@ -49,8 +49,8 @@ class _RoomOptionListState extends State<RoomOptionList>
                           color: Colors.white))),
             ),
             Container(
-              margin: EdgeInsets.only(left: 40),
-              child: Align(
+              margin: const EdgeInsets.only(left: 40),
+              child: const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Search Room",
@@ -63,17 +63,17 @@ class _RoomOptionListState extends State<RoomOptionList>
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 30),
+                  margin: const EdgeInsets.only(left: 30),
                   width: MediaQuery.of(context).size.width * 0.7,
                   height: MediaQuery.of(context).size.height * 0.05,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: fTextFieldColor),
-                  child: TextField(
+                  child: const TextField(
                     maxLengthEnforcement: MaxLengthEnforcement.enforced,
                     decoration: InputDecoration(
                       contentPadding:
-                          const EdgeInsets.only(left: 20, right: 20, bottom: 8),
+                          EdgeInsets.only(left: 20, right: 20, bottom: 8),
                       border: InputBorder.none,
                     ),
                   ),
@@ -89,26 +89,26 @@ class _RoomOptionListState extends State<RoomOptionList>
                   automaticIndicatorColorAdjustment: false,
                   indicatorColor: Colors.transparent,
                   isScrollable: true,
-                  tabs: [
-                    const Tab(
+                  tabs: const [
+                    Tab(
                       child: Text(
                         "Room List",
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const Tab(
+                    Tab(
                       child: Text(
                         "Speakers List",
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const Tab(
+                    Tab(
                       child: Text(
                         "Chat List",
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const Tab(
+                    Tab(
                       child: Text(
                         "Feed List",
                         textAlign: TextAlign.center,
@@ -116,23 +116,23 @@ class _RoomOptionListState extends State<RoomOptionList>
                     ),
                   ],
                 ),
-                Container(
+                SizedBox(
                   height: MediaQuery.of(context).size.height * 0.70,
                   child: TabBarView(
                     controller: _tabController,
-                    children: [
+                    children: const [
                       RoomList(),
-                      const Center(
+                      Center(
                         child: Text('Display Tab 2',
                             style: TextStyle(
                                 fontSize: 22, fontWeight: FontWeight.bold)),
                       ),
-                      const Center(
+                      Center(
                         child: Text('Display Tab 3',
                             style: TextStyle(
                                 fontSize: 22, fontWeight: FontWeight.bold)),
                       ),
-                      const Center(
+                      Center(
                         child: Text('Display Tab 4',
                             style: TextStyle(
                                 fontSize: 22, fontWeight: FontWeight.bold)),

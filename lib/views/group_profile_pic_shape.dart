@@ -22,11 +22,11 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
       child: Scaffold(
         backgroundColor: fTextFieldColor,
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 15, top: 5),
+                padding: const EdgeInsets.only(left: 15, top: 5),
                 child: Align(
                     alignment: Alignment.bottomLeft,
                     child: IconButton(
@@ -36,9 +36,10 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                               MaterialPageRoute(
                                   builder: (context) => const CreateGroup()));
                         },
-                        icon: Icon(Icons.arrow_back_ios, color: Colors.white))),
+                        icon: const Icon(Icons.arrow_back_ios,
+                            color: Colors.white))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -50,15 +51,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                     fontSize: 18,
                     color: Colors.black),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 11,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/commentbox.png"),
                     FilterChipWithImageWidget(
@@ -68,15 +69,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone2.png"),
                     FilterChipWithImageWidget(
@@ -86,15 +87,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone5.png"),
                     FilterChipWithImageWidget(
@@ -104,15 +105,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone8.png"),
                     FilterChipWithImageWidget(
@@ -122,15 +123,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone11.png"),
                     FilterChipWithImageWidget(
@@ -140,15 +141,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone14.png"),
                     FilterChipWithImageWidget(
@@ -158,15 +159,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone17.png"),
                     FilterChipWithImageWidget(
@@ -176,15 +177,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone20.png"),
                     FilterChipWithImageWidget(
@@ -194,15 +195,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/icone23.png"),
                     FilterChipWithImageWidget(
@@ -212,15 +213,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(image: "assets/images/starx.png"),
                     FilterChipWithImageWidget(
                         image: "assets/images/crossstar.png"),
@@ -229,15 +230,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/diamond2.png"),
                     FilterChipWithImageWidget(
@@ -247,15 +248,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/peopleicon.png"),
                     FilterChipWithImageWidget(
@@ -265,15 +266,15 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 70,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/thedrip.png"),
                     FilterChipWithImageWidget(
@@ -283,43 +284,43 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 290,
                 height: 108,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(image: "assets/images/heart.png"),
                     FilterChipWithImageWidget(
                         image: "assets/images/starreg.png"),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 width: 280,
                 height: 100,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: const [
                     FilterChipWithImageWidget(
                         image: "assets/images/diamond.png"),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset("assets/images/arrow1.png"),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   SizedBox(
@@ -353,13 +354,13 @@ class _GroupShapeChangeState extends State<GroupShapeChange> {
                           ))),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   Image.asset("assets/images/arrow2.png"),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
             ],

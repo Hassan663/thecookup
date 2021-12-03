@@ -50,7 +50,8 @@ class _InstantMessageState extends State<InstantMessage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => OpenCalendar()));
+                                        builder: (context) =>
+                                            const OpenCalendar()));
                               },
                               child: Image.asset("assets/images/calender.png")),
                           const SizedBox(
@@ -61,7 +62,8 @@ class _InstantMessageState extends State<InstantMessage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => OpenCalendar()));
+                                        builder: (context) =>
+                                            const OpenCalendar()));
                               },
                               child: Image.asset("assets/images/invite.png")),
                           const SizedBox(

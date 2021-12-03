@@ -42,7 +42,6 @@ List<Map<String, dynamic>> followerList = [
     "desc": " ",
     "followButton": "Follow"
   },
-
   {
     "name": "Naz T",
     "image": "assets/images/kahari.png",

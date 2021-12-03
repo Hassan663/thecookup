@@ -27,7 +27,7 @@ class _FeedState extends State<Feed> {
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light));
     return Scaffold(
-      bottomNavigationBar: BootomBr(),
+      bottomNavigationBar: const BootomBr(),
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -36,7 +36,7 @@ class _FeedState extends State<Feed> {
         child: ListView(
           children: [
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -47,7 +47,7 @@ class _FeedState extends State<Feed> {
                   ),
                   Row(
                     children: [
-                      MyText(
+                      const MyText(
                         "Feed",
                         color: Colors.black,
                         fontSize: 10,
@@ -59,7 +59,7 @@ class _FeedState extends State<Feed> {
                       )
                     ],
                   ),
-                  MyText(
+                  const MyText(
                     "Runtime: 22m",
                     textAlign: TextAlign.right,
                     color: Colors.green,
@@ -69,7 +69,7 @@ class _FeedState extends State<Feed> {
             ),
             Container(
               height: MediaQuery.of(context).size.height * 0.75,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.grey,
                   image: DecorationImage(
                       image: AssetImage("assets/images/background.png"),
@@ -86,10 +86,10 @@ class _FeedState extends State<Feed> {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                contentPadding: EdgeInsets.symmetric(
+                                contentPadding: const EdgeInsets.symmetric(
                                     horizontal: 0, vertical: 0),
                                 content: Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(20)),
                                   ),
@@ -97,23 +97,24 @@ class _FeedState extends State<Feed> {
                                   height: 150,
                                   child: Column(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          AppRoutes.push(context, TucRoom());
+                                          AppRoutes.push(
+                                              context, const TucRoom());
                                         },
-                                        child: MyText(
+                                        child: const MyText(
                                           "Mini Screen",
                                           color: Colors.black,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10),
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 10),
                                         child: Divider(
                                           color: Colors.black,
                                           height: 2,
@@ -121,16 +122,16 @@ class _FeedState extends State<Feed> {
                                       ),
                                       InkWell(
                                         onTap: () {},
-                                        child: MyText(
+                                        child: const MyText(
                                           "Full Screen",
                                           color: Colors.green,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10),
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 10),
                                         child: Divider(
                                           color: Colors.black,
                                           height: 2,
@@ -138,16 +139,16 @@ class _FeedState extends State<Feed> {
                                       ),
                                       InkWell(
                                         onTap: () {},
-                                        child: MyText(
+                                        child: const MyText(
                                           "Go to chat",
                                           color: Colors.black,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10),
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 10),
                                         child: Divider(
                                           color: Colors.black,
                                           height: 2,
@@ -155,7 +156,7 @@ class _FeedState extends State<Feed> {
                                       ),
                                       InkWell(
                                         onTap: () {},
-                                        child: MyText(
+                                        child: const MyText(
                                           "Hide",
                                           color: Colors.black,
                                           fontSize: 14,
@@ -178,7 +179,7 @@ class _FeedState extends State<Feed> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

@@ -391,7 +391,7 @@ class _MyProfileState extends State<MyProfile> {
                                       builder: (context) =>
                                           const CreateGroup()));
                             },
-                            child: Icon(Icons.add_location, size: 35)),
+                            child: const Icon(Icons.add_location, size: 35)),
                       ),
                     ],
                   ),

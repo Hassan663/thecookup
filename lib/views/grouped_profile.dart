@@ -1,9 +1,7 @@
 import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/model/follower_list_model.dart';
 import 'package:cookup/model/video_list_model.dart';
-import 'package:cookup/views/create_group.dart';
 import 'package:cookup/views/following_list.dart';
-import 'package:cookup/views/instant_message.dart';
 import 'package:cookup/views/pers_profile.dart';
 import 'package:cookup/views/video_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -251,7 +249,7 @@ class _GroupedProfileState extends State<GroupedProfile> {
                               SizedBox(
                                   height: 300,
                                   child: TabBarView(
-                                      physics: BouncingScrollPhysics(),
+                                      physics: const BouncingScrollPhysics(),
                                       children: [
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -270,7 +268,7 @@ class _GroupedProfileState extends State<GroupedProfile> {
                                                             MaterialPageRoute(
                                                                 builder:
                                                                     (context) =>
-                                                                        PersonProfileScreen()));
+                                                                        const PersonProfileScreen()));
                                                       },
                                                       child: Container(
                                                         width: 60.0,
