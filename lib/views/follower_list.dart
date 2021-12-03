@@ -63,7 +63,7 @@ class _FollowersListState extends State<FollowersList> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height,
                     child: ListView.builder(
-                      physics: BouncingScrollPhysics(),
+                        physics: BouncingScrollPhysics(),
                         itemCount: follower.length,
                         itemBuilder: (context, index) {
                           FollowersModel followersModel = follower[index];

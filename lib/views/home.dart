@@ -1,11 +1,14 @@
 import 'package:cookup/constants/app_routes.dart';
 import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/model/message_model.dart';
+import 'package:cookup/views/all_rooms.dart';
 import 'package:cookup/views/discover_search.dart';
 import 'package:cookup/widget/appp_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'open_calendar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -51,7 +54,12 @@ class _HomeScreenState extends State<HomeScreen>
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => OpenCalendar()));
+                              },
                               icon: Image.asset("assets/images/calender.png")),
                           IconButton(
                               onPressed: () {},
@@ -118,17 +126,25 @@ class _HomeScreenState extends State<HomeScreen>
                               ),
                             ),
                           ),
-                          Container(
-                            width: 90,
-                            height: 26,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: fTabsColor,
-                                border: Border.all(color: Colors.black)),
-                            child: const Tab(
-                              child: Text(
-                                "All Rooms",
-                                textAlign: TextAlign.center,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const AllRooms()));
+                            },
+                            child: Container(
+                              width: 90,
+                              height: 26,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: fTabsColor,
+                                  border: Border.all(color: Colors.black)),
+                              child: const Tab(
+                                child: Text(
+                                  "All Rooms",
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
                           ),
@@ -137,7 +153,6 @@ class _HomeScreenState extends State<HomeScreen>
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.67,
                         child: TabBarView(
-
                           physics: NeverScrollableScrollPhysics(),
                           controller: _tabController,
                           children: [

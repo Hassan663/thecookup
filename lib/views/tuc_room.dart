@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'feed_room_setting_option.dart';
+
 class TucRoom extends StatefulWidget {
   const TucRoom({Key? key}) : super(key: key);
 
@@ -64,15 +66,23 @@ class _TucRoomState extends State<TucRoom> {
                       )
                     ],
                   ),
-                  Image.asset("assets/images/notifications.png"),
+                  InkWell(
+                      onTap: () {
+                        _updateState(true);
+                      },
+                      onDoubleTap: () {
+                        _updateState(false);
+                      },
+                      child: Image.asset("assets/images/notifications.png")),
                   Row(
                     children: [
-                      InkWell(
+                      GestureDetector(
                           onTap: () {
-                            _updateState(true);
-                          },
-                          onDoubleTap: () {
-                            _updateState(false);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        FeedRoomSettingOption()));
                           },
                           child: Image.asset("assets/images/Law Book.png")),
                       SizedBox(
@@ -375,29 +385,21 @@ class _TucRoomState extends State<TucRoom> {
                             //mainAxisSpacing: 10.0
                           ),
                           itemBuilder: (BuildContext context, int index) {
-                            return InkWell(
-                              onTap: () {
-                                AppRoutes.push(
-                                    context,
-                                    UserProfile
-                                        .UserProfileDetailsList[index].page);
-                              },
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  ClipOval(
-                                      child: Image.asset(UserProfile
-                                          .UserProfileDetailsList[index]
-                                          .imagepath!)),
-                                  Row(
-                                    children: [
-                                      Image.asset("assets/images/location.png"),
-                                      MyText(UserProfile
-                                          .UserProfileDetailsList[index].name!),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ClipOval(
+                                    child: Image.asset(UserProfile
+                                        .UserProfileDetailsList[index]
+                                        .imagepath!)),
+                                Row(
+                                  children: [
+                                    Image.asset("assets/images/location.png"),
+                                    MyText(UserProfile
+                                        .UserProfileDetailsList[index].name!),
+                                  ],
+                                ),
+                              ],
                             );
                           }),
                     ),
@@ -443,26 +445,18 @@ class _TucRoomState extends State<TucRoom> {
                             crossAxisSpacing: 10.0,
                             mainAxisSpacing: 10.0),
                         itemBuilder: (BuildContext context, int index) {
-                          return InkWell(
-                            onTap: () {
-                              AppRoutes.push(
-                                  context,
-                                  UserProfile
-                                      .UserProfileDetailsList[index].page);
-                            },
-                            child: Column(
-                              children: [
-                                ClipOval(
-                                    child: Image.asset(UserProfile
-                                        .UserProfileDetailsList[index]
-                                        .imagepath!)),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                MyText(UserProfile
-                                    .UserProfileDetailsList[index].name!)
-                              ],
-                            ),
+                          return Column(
+                            children: [
+                              ClipOval(
+                                  child: Image.asset(UserProfile
+                                      .UserProfileDetailsList[index]
+                                      .imagepath!)),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              MyText(UserProfile
+                                  .UserProfileDetailsList[index].name!)
+                            ],
                           );
                         }),
                   ),

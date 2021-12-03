@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'open_calendar.dart';
+
 class InstantMessage extends StatefulWidget {
   const InstantMessage({Key? key}) : super(key: key);
 
@@ -43,11 +45,25 @@ class _InstantMessageState extends State<InstantMessage> {
                           const SizedBox(
                             width: 15,
                           ),
-                          Image.asset("assets/images/calender.png"),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => OpenCalendar()));
+                              },
+                              child: Image.asset("assets/images/calender.png")),
                           const SizedBox(
                             width: 15,
                           ),
-                          Image.asset("assets/images/invite.png"),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => OpenCalendar()));
+                              },
+                              child: Image.asset("assets/images/invite.png")),
                           const SizedBox(
                             width: 15,
                           ),
