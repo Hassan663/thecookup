@@ -577,8 +577,3 @@ class _OpenRoomState extends State<OpenRoom> {
         });
   }
 }
-
-// Container(
-//               decoration: BoxDecoration(
-//                   color: fBottomSheetColor,
-//                   borderRadius: BorderRadius.circular(25)),

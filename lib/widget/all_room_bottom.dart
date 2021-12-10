@@ -1,3 +1,4 @@
+import 'package:cookup/views/request_option.dart';
 import 'package:cookup/views/room_option_list.dart';
 import 'package:flutter/material.dart';
 
@@ -55,14 +56,34 @@ class _BootomForAllRoomState extends State<BootomForAllRoom> {
             Row(
               children: [
                 GestureDetector(
-                    onTap: () {},
-                    child: Image.asset("assets/images/clipboard.png",width: 28,height: 28,)),
+                    onTap: () {
+                      showModalBottomSheet(
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          context: context,
+                          builder: (context) => const RequestOptions());
+                    },
+                    child: Image.asset(
+                      "assets/images/clipboard.png",
+                      width: 28,
+                      height: 28,
+                    )),
                 GestureDetector(
-                    onTap: () {Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => RoomOptionList()));},
-                    child: Image.asset("assets/images/menuu.png",width:50)),
-                Image.asset("assets/images/Plus.png",width: 40,),
-                Image.asset("assets/images/mic.png",width: 60,),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RoomOptionList()));
+                    },
+                    child: Image.asset("assets/images/menuu.png", width: 50)),
+                Image.asset(
+                  "assets/images/Plus.png",
+                  width: 40,
+                ),
+                Image.asset(
+                  "assets/images/mic.png",
+                  width: 60,
+                ),
               ],
             )
           ],

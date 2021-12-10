@@ -1,3 +1,5 @@
+import 'package:cookup/views/feed.dart';
+import 'package:cookup/views/tcu_profile.dart';
 import 'package:cookup/widget/app_icons.dart';
 import 'package:cookup/widget/appp_text_widget.dart';
 import 'package:flutter/material.dart';
@@ -47,14 +49,24 @@ class BootomBr extends StatelessWidget {
             ),
             Row(
               children: [
-                Image.asset("assets/images/wifi.png"),
                 GestureDetector(
-                  onTap: (){
-
-                  },
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Feed()));
+                    },
                     child: Image.asset("assets/images/wifi.png")),
+                Image.asset("assets/images/wifi.png"),
                 Image.asset("assets/images/Plus.png"),
-                Image.asset("assets/images/hand1.png"),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyProfile()));
+                    },
+                    child: Image.asset("assets/images/hand1.png")),
               ],
             )
           ],

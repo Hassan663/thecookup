@@ -141,9 +141,7 @@ class _OpenCalendarState extends State<OpenCalendar>
                                   todayDecoration: BoxDecoration(
                                       color: fCalendarCircleColor,
                                       border: Border.all(
-                                        width: 2,
-                                        color: Colors.green,
-                                      ),
+                                          width: 2, color: Colors.green),
                                       shape: BoxShape.circle)),
                               firstDay: DateTime(1990),
                               lastDay: DateTime(2050),
@@ -154,10 +152,8 @@ class _OpenCalendarState extends State<OpenCalendar>
                                       EdgeInsets.only(left: 25.0),
                                   rightChevronMargin:
                                       EdgeInsets.only(right: 25.0),
-                                  leftChevronIcon: Icon(
-                                    Icons.chevron_left,
-                                    color: fChevronColor,
-                                  ),
+                                  leftChevronIcon: Icon(Icons.chevron_left,
+                                      color: fChevronColor),
                                   rightChevronIcon: Icon(
                                     Icons.chevron_right,
                                     color: fChevronColor,
@@ -171,6 +167,16 @@ class _OpenCalendarState extends State<OpenCalendar>
                                   format = _format;
                                 });
                               },
+                              // calendarBuilders: CalendarBuilders(
+                              //   dowBuilder: (context, day) {
+                              //     return Center(
+                              //         child: Container(
+                              //             color: day.weekday == DateTime.sunday
+                              //                 ? Colors.red[300]
+                              //                 : Colors.orange[300],
+                              //            ));
+                              //   },
+                              // ),
                             ),
                           ),
                           const Center(

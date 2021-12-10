@@ -1,4 +1,6 @@
 import 'package:cookup/model/message_model.dart';
+import 'package:cookup/views/bottom_nav_bar.dart';
+import 'package:cookup/views/home.dart';
 import 'package:cookup/views/tcu_profile.dart';
 import 'package:cookup/views/view_profile_from_room.dart';
 import 'package:cookup/widget/all_room_bottom.dart';
@@ -42,6 +44,12 @@ class _AllRoomsState extends State<AllRooms> {
                       IconClass(
                         iconColor: Colors.white,
                         iconData: Icons.arrow_back_ios,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const BottomNav()));
+                        },
                       ),
                       const MyText(
                         "All Rooms",
@@ -148,14 +156,6 @@ class _AllRoomsState extends State<AllRooms> {
                           ),
                           const Image(
                               image: AssetImage("assets/images/dish.png")),
-                          // IconClass(
-                          //   iconColor: Color(0xff787777),
-                          //   iconData: Icons.school_outlined,
-                          // ),
-                          // IconClass(
-                          //   iconColor: Color(0xff787777),
-                          //   iconData: Icons.more_horiz_outlined,
-                          // )
                         ],
                       ),
                     ),

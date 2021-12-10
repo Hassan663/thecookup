@@ -3,7 +3,7 @@ import 'package:cookup/views/home.dart';
 import 'package:cookup/views/instant_message.dart';
 import 'package:cookup/views/open_room.dart';
 import 'package:cookup/views/tcu_profile.dart';
-import 'package:cookup/views/video.dart';
+import 'package:cookup/views/tcu_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -74,7 +74,7 @@ class _BottomNavState extends State<BottomNav>
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const TikTokVideos()));
+                                builder: (context) => const TcuVideo()));
                       },
                       child: Image.asset("assets/images/buffetvideos.png")),
                 ),

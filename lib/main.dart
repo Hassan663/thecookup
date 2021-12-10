@@ -1,4 +1,5 @@
 import 'package:cookup/views/login.dart';
+import 'package:cookup/views/tcu_video.dart';
 import 'package:flutter/material.dart';
 
 void main() {

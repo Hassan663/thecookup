@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class IconClass extends StatelessWidget {
@@ -15,6 +13,7 @@ class IconClass extends StatelessWidget {
     this.iconSize,
     this.onPressed,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
