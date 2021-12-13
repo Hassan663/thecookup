@@ -109,7 +109,7 @@ class OpenRoomList extends StatelessWidget {
             height: 2,
           ),
           InkWell(
-            onTap: (){
+            onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const TucRoom()));
             },

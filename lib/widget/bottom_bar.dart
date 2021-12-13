@@ -11,7 +11,10 @@ class BootomBr extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width,
       color: Colors.white,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
@@ -19,7 +22,10 @@ class BootomBr extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: MediaQuery.of(context).size.width * 0.36,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.36,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(

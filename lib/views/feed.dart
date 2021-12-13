@@ -1,10 +1,5 @@
-import 'package:cookup/constants/app_routes.dart';
 import 'package:cookup/constants/color_constant.dart';
 import 'package:cookup/model/message_model.dart';
-import 'package:cookup/views/mini_screen.dart';
-import 'package:cookup/views/sign_up_code.dart';
-import 'package:cookup/views/tuc_room.dart';
-import 'package:cookup/views/view_profile_from_room.dart';
 import 'package:cookup/widget/app_icons.dart';
 import 'package:cookup/widget/appp_text_widget.dart';
 import 'package:cookup/widget/bottom_bar.dart';
