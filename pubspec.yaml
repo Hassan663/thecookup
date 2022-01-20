@@ -44,6 +44,9 @@ dependencies:
   line_icons: ^2.0.1
   table_calendar: ^3.0.3
   polls: ^1.0.1
+  get: ^4.6.1
+  get_storage: ^2.0.3
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
