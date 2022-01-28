@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cookup/utils/apidata.dart';
+import 'package:cookup/views/bottom_nav_bar.dart';
 import 'package:cookup/widget/common_snackbar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -35,15 +36,32 @@ class LoginController extends GetxController{
     isLoading = true;
     update();
     try{
-      var res = await http.post(Uri.parse(ApiData.baseUrl + ApiData.login), body: {
-        'email' : email.text,
-        'password' : password.text,
-      });
+      var res = await http.post(Uri.parse(ApiData.baseUrl + ApiData.login),
+          headers: {
+            'Content-type': 'application/json',
+            "Accept": "application/json",
+            'Device-Type' : 'android'
+          },
+          body: jsonEncode({
+            'email' : email.text,
+            'password' : password.text,
+            'timezone' : 'Asia/Karachi',
+            'fcm_token' : 'adsds',
+            'phone' : '03434044387',
+          }));
       isLoading = false;
       update();
       var data = json.decode(res.body);
-      if (kDebugMode) {
-        print('Result is $data');
+      if(data['message'].toString() == 'User Login Successfully.')
+      {
+        Get.offAll(() =>const BottomNav());
+        CommonSnackbar.getSnackbar('Success', data['message'].toString() , Colors.green);
+      }
+      else
+      {
+        isLoading = false;
+        update();
+        CommonSnackbar.getSnackbar('Error', data['message'].toString() , Colors.red);
       }
     }catch(e){
       isLoading = false;
